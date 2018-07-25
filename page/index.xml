@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Random Inconsequential Thoughts</title>
+    <link>http://duckpuppy.com/page/</link>
+    <description>Recent content in Pages on Random Inconsequential Thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 27 Apr 2017 11:38:27 -0400</lastBuildDate>
+    
+	<atom:link href="http://duckpuppy.com/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://duckpuppy.com/page/about/</link>
+      <pubDate>Thu, 27 Apr 2017 11:38:27 -0400</pubDate>
+      
+      <guid>http://duckpuppy.com/page/about/</guid>
+      <description>Who I Am Hi, I&amp;rsquo;m Patrick Aikens.
+I&amp;rsquo;m a software engineer, and have been for a very long time. I started in the video games industry. Since then I have passed through the insurance industry and the banking industry before ending up at Cox Automotive Inventory Solutions where I remain today.
+Hobbies I enjoy reading, though I&amp;rsquo;ve shifted in recent times to more audiobooks as my commute times have increased dramatically.</description>
+    </item>
+    
+  </channel>
+</rss>
