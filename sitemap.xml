@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>http://duckpuppy.com/author/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://duckpuppy.com/categories/</loc>
     <priority>0</priority>
   </url>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pages on Random Inconsequential Thoughts</title>
-    <link>http://duckpuppy.com/page/</link>
-    <description>Recent content in Pages on Random Inconsequential Thoughts</description>
+    <title>Random Inconsequential Thoughts</title>
+    <link>http://duckpuppy.com/</link>
+    <description>Recent content on Random Inconsequential Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>paikens &lt;at&gt; gmail &lt;dot&gt; com (Patrick Aikens)</managingEditor>
     <webMaster>paikens &lt;at&gt; gmail &lt;dot&gt; com (Patrick Aikens)</webMaster>
     <lastBuildDate>Thu, 27 Apr 2017 11:38:27 -0400</lastBuildDate>
     
-	<atom:link href="http://duckpuppy.com/page/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://duckpuppy.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
