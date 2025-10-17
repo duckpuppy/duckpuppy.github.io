@@ -3,6 +3,8 @@
 /resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json
+_vendor/
+go.sum
 
 # IDE
 .vscode/
