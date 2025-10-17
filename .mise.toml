@@ -1,0 +1,20 @@
+[tools]
+hugo-extended = "latest"
+go = "latest"
+
+[env]
+HUGO_ENV = "development"
+
+[tasks.serve]
+description = "Run Hugo development server with drafts"
+run = "hugo server -D --bind 0.0.0.0"
+
+[tasks.build]
+description = "Build Hugo site for production"
+run = "HUGO_ENV=production hugo --minify"
+
+[tasks.new]
+description = "Create a new blog post (usage: mise run new -- 'Post Title')"
+run = '''
+hugo new content posts/$(date +%Y-%m-%d)-$(echo "$@" | tr '[:upper:] ' '[:lower:]-').md
+'''
