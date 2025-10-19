@@ -16,7 +16,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write  # Allow pushing theme changes
   pages: write
   id-token: write
 
@@ -58,12 +58,16 @@ jobs:
           DEFAULT_THEME: ${{ vars.DEFAULT_THEME || 'catppuccin-macchiato' }}
           NEW_YEAR_START: ${{ vars.NEW_YEAR_START || '' }}
           NEW_YEAR_END: ${{ vars.NEW_YEAR_END || '' }}
+          ANNIVERSARY_START: ${{ vars.ANNIVERSARY_START || '' }}
+          ANNIVERSARY_END: ${{ vars.ANNIVERSARY_END || '' }}
           VALENTINES_START: ${{ vars.VALENTINES_START || '' }}
           VALENTINES_END: ${{ vars.VALENTINES_END || '' }}
           EASTER_OFFSET_BEFORE: ${{ vars.EASTER_OFFSET_BEFORE || '' }}
           EASTER_OFFSET_AFTER: ${{ vars.EASTER_OFFSET_AFTER || '' }}
           MEMORIAL_DAY_START: ${{ vars.MEMORIAL_DAY_START || '' }}
           MEMORIAL_DAY_END: ${{ vars.MEMORIAL_DAY_END || '' }}
+          BIRTHDAY_START: ${{ vars.BIRTHDAY_START || '' }}
+          BIRTHDAY_END: ${{ vars.BIRTHDAY_END || '' }}
           INDEPENDENCE_DAY_START: ${{ vars.INDEPENDENCE_DAY_START || '' }}
           INDEPENDENCE_DAY_END: ${{ vars.INDEPENDENCE_DAY_END || '' }}
           LABOR_DAY_START: ${{ vars.LABOR_DAY_START || '' }}
