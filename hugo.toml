@@ -1,6 +1,6 @@
-baseURL = 'https://duckpuppy.com/'
+baseURL      = 'https://duckpuppy.com/'
 languageCode = 'en-us'
-title = 'cat /proc/brain'
+title        = 'cat /proc/brain'
 
 [pagination]
   pagerSize = 10
@@ -11,26 +11,26 @@ title = 'cat /proc/brain'
 
 [params]
   description = "Dev diaries, technical musings, and occasional pop culture thoughts"
-  author = "duckpuppy"
+  author      = "duckpuppy"
 
   # Theme settings
-  defaultTheme = "auto" # auto, light, dark
-  disableThemeToggle = false
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowWordCount = true
+  defaultTheme                   = "auto" # auto, light, dark
+  disableThemeToggle             = false
+  ShowReadingTime                = true
+  ShowShareButtons               = true
+  ShowPostNavLinks               = true
+  ShowBreadCrumbs                = true
+  ShowCodeCopyButtons            = true
+  ShowWordCount                  = true
   ShowRssButtonInSectionTermList = true
-  UseHugoToc = true
-  disableSpecial1stPost = false
-  disableScrollToTop = false
-  comments = false
-  hidemeta = false
-  hideSummary = false
-  showtoc = true
-  tocopen = false
+  UseHugoToc                     = true
+  disableSpecial1stPost          = false
+  disableScrollToTop             = false
+  comments                       = false
+  hidemeta                       = false
+  hideSummary                    = false
+  showtoc                        = true
+  tocopen                        = false
 
   [params.homeInfoParams]
     Title = "cat /proc/brain"
@@ -43,30 +43,30 @@ Welcome to my digital brain dump. Here you'll find:
 
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/duckpuppy"
+    url  = "https://github.com/duckpuppy"
 
   [[params.socialIcons]]
     name = "rss"
-    url = "/index.xml"
+    url  = "/index.xml"
 
 [menu]
   [[menu.main]]
     identifier = "posts"
-    name = "Posts"
-    url = "/posts/"
-    weight = 10
+    name       = "Posts"
+    url        = "/posts/"
+    weight     = 10
 
   [[menu.main]]
     identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    weight = 20
+    name       = "Tags"
+    url        = "/tags/"
+    weight     = 20
 
   [[menu.main]]
     identifier = "archives"
-    name = "Archives"
-    url = "/archives/"
-    weight = 30
+    name       = "Archives"
+    url        = "/archives/"
+    weight     = 30
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -74,8 +74,8 @@ Welcome to my digital brain dump. Here you'll find:
 [markup]
   [markup.highlight]
     anchorLineNos = false
-    codeFences = true
-    guessSyntax = false
-    lineNos = true
-    noClasses = false
-    style = "monokai"
+    codeFences    = true
+    guessSyntax   = false
+    lineNos       = true
+    noClasses     = false
+    style         = "monokai"
