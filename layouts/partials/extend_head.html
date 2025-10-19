@@ -1,0 +1,186 @@
+{{- if or (.Site.IsServer) (eq hugo.Environment "development") }}
+<!-- Theme Selector - Only in Development Mode -->
+<style>
+  #theme-selector {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: var(--entry);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-family: sans-serif;
+    max-width: 250px;
+  }
+
+  #theme-selector h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #theme-selector select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--theme);
+    color: var(--primary);
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  #theme-selector select:hover {
+    border-color: var(--primary);
+  }
+
+  #theme-selector-toggle {
+    background: none;
+    border: none;
+    color: var(--secondary);
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+
+  #theme-selector-toggle:hover {
+    color: var(--primary);
+  }
+
+  #theme-selector.minimized {
+    padding: 8px 12px;
+  }
+
+  #theme-selector.minimized #theme-selector-content {
+    display: none;
+  }
+
+  #theme-selector .dev-badge {
+    display: inline-block;
+    background: #ff6b6b;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 5px;
+  }
+</style>
+
+<div id="theme-selector">
+  <h3>
+    <span>🎨 Theme Selector <span class="dev-badge">DEV</span></span>
+    <button id="theme-selector-toggle" onclick="toggleThemeSelector()">−</button>
+  </h3>
+  <div id="theme-selector-content">
+    <select id="theme-select" onchange="switchTheme(this.value)">
+      <option value="">-- Select Theme --</option>
+      <optgroup label="Seasonal">
+        <option value="new-year">🎊 New Year</option>
+        <option value="valentines">💝 Valentine's Day</option>
+        <option value="easter">🐰 Easter</option>
+        <option value="memorial-day">🇺🇸 Memorial Day</option>
+        <option value="independence-day">🎆 Independence Day</option>
+        <option value="labor-day">👷 Labor Day</option>
+        <option value="fall">🍂 Fall/Autumn</option>
+        <option value="halloween">🎃 Halloween</option>
+        <option value="thanksgiving">🦃 Thanksgiving</option>
+        <option value="christmas">🎄 Christmas</option>
+      </optgroup>
+      <optgroup label="Default">
+        <option value="catppuccin-macchiato">🌟 Catppuccin Macchiato</option>
+        <option value="palette17">🎨 Palette #17</option>
+      </optgroup>
+    </select>
+    <p style="font-size: 11px; color: var(--secondary); margin: 8px 0 0 0;">
+      Changes are temporary. Use <code style="background: var(--code-bg); padding: 2px 4px; border-radius: 3px;">mise run theme</code> to persist.
+    </p>
+  </div>
+</div>
+
+<script>
+  function switchTheme(themeId) {
+    if (!themeId) return;
+
+    // Show loading state
+    const select = document.getElementById('theme-select');
+    const originalText = select.options[select.selectedIndex].text;
+    select.disabled = true;
+
+    // Note: This requires running a local command to switch themes
+    // Display instructions to user
+    const command = `mise run theme ${themeId}`;
+
+    // Copy command to clipboard if possible
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(command).then(() => {
+        alert(`To switch to ${themeId} theme:\n\n` +
+              `Run this command in your terminal:\n` +
+              `${command}\n\n` +
+              `(Command copied to clipboard)\n\n` +
+              `Then refresh this page.`);
+      }).catch(() => {
+        alert(`To switch to ${themeId} theme:\n\n` +
+              `Run this command in your terminal:\n` +
+              `${command}\n\n` +
+              `Then refresh this page.`);
+      });
+    } else {
+      alert(`To switch to ${themeId} theme:\n\n` +
+            `Run this command in your terminal:\n` +
+            `${command}\n\n` +
+            `Then refresh this page.`);
+    }
+
+    select.disabled = false;
+    select.value = ''; // Reset selection
+  }
+
+  function toggleThemeSelector() {
+    const selector = document.getElementById('theme-selector');
+    const toggle = document.getElementById('theme-selector-toggle');
+    selector.classList.toggle('minimized');
+    toggle.textContent = selector.classList.contains('minimized') ? '+' : '−';
+  }
+
+  // Detect current theme from CSS and highlight in dropdown
+  window.addEventListener('DOMContentLoaded', () => {
+    // Try to detect current theme from page
+    const themeId = detectCurrentTheme();
+    if (themeId) {
+      const select = document.getElementById('theme-select');
+      // Highlight current theme without triggering change
+      for (let option of select.options) {
+        if (option.value === themeId) {
+          option.text = '✓ ' + option.text;
+          option.selected = true;
+          option.style.fontWeight = 'bold';
+          break;
+        }
+      }
+    }
+  });
+
+  function detectCurrentTheme() {
+    // Check if theme-colors.css has a theme-id comment
+    // This is a best-effort detection
+    const stylesheets = Array.from(document.styleSheets);
+    for (let sheet of stylesheets) {
+      try {
+        if (sheet.href && sheet.href.includes('theme-colors')) {
+          // Could parse CSS comments here, but that's complex
+          // For now, just return null and let user see all options
+          return null;
+        }
+      } catch(e) {
+        // CORS or other error, skip
+      }
+    }
+    return null;
+  }
+</script>
+{{- end }}
