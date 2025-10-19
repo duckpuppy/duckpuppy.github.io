@@ -1,0 +1,172 @@
+/* Labor Day color scheme
+ * theme-id: labor-day
+ * Working class appreciation with navy, tan, and patriotic accents
+ * Colors: #1e3a8a (navy blue), #d4a574 (tan), #b22234 (red), #ffffff (white), #4a4a4a (charcoal)
+ */
+
+:root {
+  /* Light mode - honest work tones */
+  --theme: #fafaf8;
+  --entry: #f0ede8;
+  --primary: #2a2a2a;
+  --secondary: #4a4a4a;
+  --tertiary: #e8e4dc;
+  --content: #2a2a2a;
+  --hljs-bg: #f0ede8;
+  --code-bg: #e8e4dc;
+  --border: #c4b8a0;
+
+  /* Labor Day colors */
+  --worker-navy: #1e3a8a;
+  --honest-tan: #d4a574;
+  --pride-red: #b22234;
+  --workwear-blue: #2563eb;
+  --steel-gray: #6b7280;
+}
+
+.dark {
+  /* Dark mode - evening after hard work */
+  --theme: #1a1810;
+  --entry: #2a2418;
+  --primary: #e8e4dc;
+  --secondary: #c8c4bc;
+  --tertiary: #3a3428;
+  --content: #d8d4cc;
+  --hljs-bg: #0f0d08;
+  --code-bg: #1a1810;
+  --border: #4a4438;
+
+  /* Labor Day colors */
+  --worker-navy: #3b82f6;
+  --honest-tan: #d4a574;
+  --pride-red: #dc2626;
+  --workwear-blue: #60a5fa;
+  --steel-gray: #9ca3af;
+}
+
+/* Links - worker navy */
+a {
+  color: var(--worker-navy);
+}
+
+a:hover {
+  color: var(--pride-red);
+}
+
+/* Post entries - workwear inspired */
+.post-entry {
+  border-left: 4px solid var(--worker-navy);
+}
+
+.post-entry:hover {
+  border-color: var(--honest-tan);
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.2);
+}
+
+/* Buttons - pride red */
+.button,
+button,
+input[type="submit"] {
+  background-color: var(--pride-red);
+  border-color: var(--pride-red);
+  color: white;
+  font-weight: 600;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--worker-navy);
+  border-color: var(--worker-navy);
+}
+
+/* Tags - steel gray */
+.post-tags a {
+  background-color: var(--steel-gray);
+  color: white;
+}
+
+.post-tags a:hover {
+  background-color: var(--worker-navy);
+}
+
+/* Highlights - honest tan */
+mark,
+.highlight {
+  background-color: var(--honest-tan);
+  color: var(--primary);
+}
+
+/* Top link - workwear blue */
+.top-link {
+  background-color: var(--workwear-blue);
+  color: white;
+}
+
+.top-link:hover {
+  background-color: var(--worker-navy);
+}
+
+/* Code syntax highlighting - Labor themed */
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal {
+  color: var(--pride-red);
+}
+
+.dark .hljs-string,
+.dark .hljs-title,
+.dark .hljs-name {
+  color: var(--workwear-blue);
+}
+
+.dark .hljs-attribute,
+.dark .hljs-symbol {
+  color: var(--honest-tan);
+}
+
+.dark .hljs-function,
+.dark .hljs-class {
+  color: var(--worker-navy);
+}
+
+.dark .hljs-number {
+  color: var(--steel-gray);
+}
+
+.dark .hljs-comment {
+  color: #7a7268;
+  font-style: italic;
+}
+
+/* Light mode syntax highlighting */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #8b1a2a;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name {
+  color: #1e40af;
+}
+
+.hljs-attribute,
+.hljs-symbol {
+  color: #a67c52;
+}
+
+.hljs-function,
+.hljs-class {
+  color: #1e3a8a;
+}
+
+.hljs-number {
+  color: #4b5563;
+}
+
+.hljs-comment {
+  color: #6b7280;
+  font-style: italic;
+}

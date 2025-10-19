@@ -1,0 +1,189 @@
+/* Easter color scheme
+ * theme-id: easter
+ * Joyful resurrection and spring renewal with soft pastels
+ * Colors: #ffb6d9 (pastel pink), #ffffb3 (pastel yellow), #b3ffb3 (pastel green), #e6d0ff (lavender), #ffffff (white)
+ */
+
+:root {
+  /* Light mode - soft spring pastels */
+  --theme: #fffef9;
+  --entry: #f9f7ff;
+  --primary: #4a3f5a;
+  --secondary: #6a5a7a;
+  --tertiary: #f0e8ff;
+  --content: #4a3f5a;
+  --hljs-bg: #f9f7ff;
+  --code-bg: #f0e8f8;
+  --border: #d4c4e8;
+
+  /* Easter pastel colors */
+  --pastel-pink: #ffb6d9;
+  --pastel-yellow: #ffffb3;
+  --pastel-green: #b3ffb3;
+  --lavender: #e6d0ff;
+  --pastel-blue: #b3d9ff;
+  --spring-white: #ffffff;
+  --lilac: #c8a2c8;
+}
+
+.dark {
+  /* Dark mode - gentle evening pastels */
+  --theme: #1a1520;
+  --entry: #2a2030;
+  --primary: #e8d8f8;
+  --secondary: #c8b8d8;
+  --tertiary: #3a2f48;
+  --content: #d8c8e8;
+  --hljs-bg: #0f0a15;
+  --code-bg: #1a1520;
+  --border: #6a5a7a;
+
+  /* Easter pastel colors */
+  --pastel-pink: #ffb6d9;
+  --pastel-yellow: #ffffcc;
+  --pastel-green: #b3ffb3;
+  --lavender: #e6d0ff;
+  --pastel-blue: #b3d9ff;
+  --spring-white: #fafafa;
+  --lilac: #dda0dd;
+}
+
+/* Links - soft lavender */
+a {
+  color: var(--lilac);
+}
+
+a:hover {
+  color: var(--pastel-pink);
+}
+
+/* Post entries - spring borders */
+.post-entry {
+  border-left: 3px solid var(--lavender);
+}
+
+.post-entry:hover {
+  border-color: var(--pastel-pink);
+  box-shadow: 0 2px 12px rgba(230, 208, 255, 0.3);
+}
+
+/* Buttons - pastel pink */
+.button,
+button,
+input[type="submit"] {
+  background-color: var(--pastel-pink);
+  border-color: var(--pastel-pink);
+  color: var(--primary);
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--lavender);
+  border-color: var(--lavender);
+}
+
+/* Tags - mix of spring colors */
+.post-tags a {
+  background-color: var(--pastel-green);
+  color: var(--primary);
+}
+
+.post-tags a:hover {
+  background-color: var(--pastel-yellow);
+}
+
+/* Highlights - soft yellow */
+mark,
+.highlight {
+  background-color: var(--pastel-yellow);
+  color: var(--primary);
+}
+
+/* Top link - pastel blue */
+.top-link {
+  background-color: var(--pastel-blue);
+  color: var(--primary);
+}
+
+.top-link:hover {
+  background-color: var(--lavender);
+}
+
+/* Code syntax highlighting - Easter themed */
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal {
+  color: var(--pastel-pink);
+}
+
+.dark .hljs-string,
+.dark .hljs-title,
+.dark .hljs-name {
+  color: var(--pastel-green);
+}
+
+.dark .hljs-attribute,
+.dark .hljs-symbol {
+  color: var(--pastel-yellow);
+}
+
+.dark .hljs-function,
+.dark .hljs-class {
+  color: var(--lavender);
+}
+
+.dark .hljs-number {
+  color: var(--pastel-blue);
+}
+
+.dark .hljs-comment {
+  color: #8a7a9a;
+  font-style: italic;
+}
+
+/* Light mode syntax highlighting */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #9370db;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name {
+  color: #3cb371;
+}
+
+.hljs-attribute,
+.hljs-symbol {
+  color: #daa520;
+}
+
+.hljs-function,
+.hljs-class {
+  color: #8a5aa0;
+}
+
+.hljs-number {
+  color: #6495ed;
+}
+
+.hljs-comment {
+  color: #9a8aaa;
+  font-style: italic;
+}
+
+/* Spring renewal effect */
+.dark h1,
+.dark h2 {
+  color: var(--lavender);
+}
+
+.post-title {
+  color: var(--lilac);
+}
+
+.dark .post-title {
+  color: var(--pastel-pink);
+}

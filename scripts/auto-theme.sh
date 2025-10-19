@@ -64,6 +64,63 @@ switch_theme() {
     return 0
 }
 
+# Function to calculate Easter Sunday using Computus algorithm (Gregorian calendar)
+calculate_easter() {
+    local year=$1
+    local a=$(( year % 19 ))
+    local b=$(( year / 100 ))
+    local c=$(( year % 100 ))
+    local d=$(( b / 4 ))
+    local e=$(( b % 4 ))
+    local f=$(( (b + 8) / 25 ))
+    local g=$(( (b - f + 1) / 3 ))
+    local h=$(( (19 * a + b - d - g + 15) % 30 ))
+    local i=$(( c / 4 ))
+    local k=$(( c % 4 ))
+    local l=$(( (32 + 2 * e + 2 * i - h - k) % 7 ))
+    local m=$(( (a + 11 * h + 22 * l) / 451 ))
+    local month=$(( (h + l - 7 * m + 114) / 31 ))
+    local day=$(( ((h + l - 7 * m + 114) % 31) + 1 ))
+    printf "%d-%02d-%02d" "$year" "$month" "$day"
+}
+
+# Calculate Easter and its period
+EASTER_DATE=$(calculate_easter $YEAR)
+EASTER_OFFSET_BEFORE="${EASTER_OFFSET_BEFORE:-7}"
+EASTER_OFFSET_AFTER="${EASTER_OFFSET_AFTER:-7}"
+EASTER_START=$(date -d "$EASTER_DATE - $EASTER_OFFSET_BEFORE days" +%Y-%m-%d)
+EASTER_END=$(date -d "$EASTER_DATE + $EASTER_OFFSET_AFTER days" +%Y-%m-%d)
+
+# New Year: January 1
+# Active period: Dec 27 - Jan 7 (configurable via env vars)
+NEW_YEAR_START="${NEW_YEAR_START:-$(($YEAR-1))-12-27}"
+NEW_YEAR_END="${NEW_YEAR_END:-$YEAR-01-07}"
+
+# Valentine's Day: February 14
+# Active period: Feb 7 - Feb 15 (configurable via env vars)
+VALENTINES_START="${VALENTINES_START:-$YEAR-02-07}"
+VALENTINES_END="${VALENTINES_END:-$YEAR-02-15}"
+
+# Memorial Day: Last Monday of May
+# Active period: Week before Memorial Day (configurable via env vars)
+MEMORIAL_DAY_START="${MEMORIAL_DAY_START:-$YEAR-05-19}"
+MEMORIAL_DAY_END="${MEMORIAL_DAY_END:-$YEAR-05-26}"
+
+# Independence Day: July 4
+# Active period: Week before through week after (configurable via env vars)
+INDEPENDENCE_DAY_START="${INDEPENDENCE_DAY_START:-$YEAR-06-27}"
+INDEPENDENCE_DAY_END="${INDEPENDENCE_DAY_END:-$YEAR-07-11}"
+
+# Labor Day: First Monday of September
+# Active period: Week before through week after (configurable via env vars)
+LABOR_DAY_START="${LABOR_DAY_START:-$YEAR-08-25}"
+LABOR_DAY_END="${LABOR_DAY_END:-$YEAR-09-08}"
+
+# Fall: Mid-September through late October
+# Active period: Between Labor Day and Halloween (configurable via env vars)
+FALL_START="${FALL_START:-$YEAR-09-15}"
+FALL_END="${FALL_END:-$YEAR-10-23}"
+
 # Halloween: October 31
 # Active period: Oct 24 - Nov 1 (configurable via env vars)
 HALLOWEEN_START="${HALLOWEEN_START:-$YEAR-10-24}"
@@ -80,19 +137,41 @@ CHRISTMAS_START="${CHRISTMAS_START:-$YEAR-12-18}"
 CHRISTMAS_END="${CHRISTMAS_END:-$YEAR-12-26}"
 
 # Determine which theme should be active
+# Priority order: Specific holidays > Seasonal themes > Default
 DESIRED_THEME="$DEFAULT_THEME"
 
-# Check if we're in a holiday period (order matters - Christmas overrides Thanksgiving if they overlap)
-if [[ "$DATE_STR" > "$HALLOWEEN_START" && "$DATE_STR" < "$HALLOWEEN_END" ]]; then
+# Check if we're in a holiday period (check most specific first)
+if [[ ("$DATE_STR" > "$NEW_YEAR_START" && "$MONTH" == "12") || ("$MONTH" == "1" && "$DATE_STR" < "$NEW_YEAR_END") ]]; then
+    DESIRED_THEME="new-year"
+    echo "New Year season detected ($NEW_YEAR_START to $NEW_YEAR_END)"
+elif [[ "$DATE_STR" > "$VALENTINES_START" && "$DATE_STR" < "$VALENTINES_END" ]]; then
+    DESIRED_THEME="valentines"
+    echo "Valentine's Day season detected ($VALENTINES_START to $VALENTINES_END)"
+elif [[ "$DATE_STR" > "$EASTER_START" && "$DATE_STR" < "$EASTER_END" ]]; then
+    DESIRED_THEME="easter"
+    echo "Easter season detected ($EASTER_START to $EASTER_END, Easter: $EASTER_DATE)"
+elif [[ "$DATE_STR" > "$MEMORIAL_DAY_START" && "$DATE_STR" < "$MEMORIAL_DAY_END" ]]; then
+    DESIRED_THEME="memorial-day"
+    echo "Memorial Day season detected ($MEMORIAL_DAY_START to $MEMORIAL_DAY_END)"
+elif [[ "$DATE_STR" > "$INDEPENDENCE_DAY_START" && "$DATE_STR" < "$INDEPENDENCE_DAY_END" ]]; then
+    DESIRED_THEME="independence-day"
+    echo "Independence Day season detected ($INDEPENDENCE_DAY_START to $INDEPENDENCE_DAY_END)"
+elif [[ "$DATE_STR" > "$LABOR_DAY_START" && "$DATE_STR" < "$LABOR_DAY_END" ]]; then
+    DESIRED_THEME="labor-day"
+    echo "Labor Day season detected ($LABOR_DAY_START to $LABOR_DAY_END)"
+elif [[ "$DATE_STR" > "$FALL_START" && "$DATE_STR" < "$FALL_END" ]]; then
+    DESIRED_THEME="fall"
+    echo "Fall season detected ($FALL_START to $FALL_END)"
+elif [[ "$DATE_STR" > "$HALLOWEEN_START" && "$DATE_STR" < "$HALLOWEEN_END" ]]; then
     DESIRED_THEME="halloween"
-    echo "Halloween season detected"
+    echo "Halloween season detected ($HALLOWEEN_START to $HALLOWEEN_END)"
 elif [[ "$DATE_STR" > "$THANKSGIVING_START" && "$DATE_STR" < "$THANKSGIVING_END" ]]; then
     DESIRED_THEME="thanksgiving"
-    echo "Thanksgiving season detected"
-elif [[ "$DATE_STR" > "$CHRISTMAS_START" ]] || [[ "$DATE_STR" < "$YEAR-01-02" ]]; then
+    echo "Thanksgiving season detected ($THANKSGIVING_START to $THANKSGIVING_END)"
+elif [[ "$DATE_STR" > "$CHRISTMAS_START" ]] || [[ "$DATE_STR" < "$(($YEAR+1))-01-02" ]]; then
     # Christmas period can span year boundary
     DESIRED_THEME="christmas"
-    echo "Christmas season detected"
+    echo "Christmas season detected ($CHRISTMAS_START to $(($YEAR+1))-01-02)"
 else
     echo "No holiday season active, using default theme"
 fi

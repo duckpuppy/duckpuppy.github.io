@@ -1,0 +1,173 @@
+/* Memorial Day color scheme
+ * theme-id: memorial-day
+ * Patriotic remembrance with red, white, blue, and gray
+ * Colors: #b22234 (old glory red), #3c3b6e (old glory blue), #ffffff (white), #808080 (gray), #000000 (black)
+ */
+
+:root {
+  /* Light mode - solemn patriotic colors */
+  --theme: #f8f9fa;
+  --entry: #e9ecef;
+  --primary: #1a1d3a;
+  --secondary: #4a4d6a;
+  --tertiary: #d4d6dc;
+  --content: #1a1d3a;
+  --hljs-bg: #e9ecef;
+  --code-bg: #dee2e6;
+  --border: #adb5bd;
+
+  /* Memorial Day colors */
+  --old-glory-red: #b22234;
+  --old-glory-blue: #3c3b6e;
+  --honor-white: #ffffff;
+  --remembrance-gray: #6c757d;
+  --flag-blue: #002868;
+}
+
+.dark {
+  /* Dark mode - respectful evening tones */
+  --theme: #0d0f1a;
+  --entry: #181a2a;
+  --primary: #e1e3ea;
+  --secondary: #c1c3ca;
+  --tertiary: #282a3a;
+  --content: #d1d3da;
+  --hljs-bg: #080a15;
+  --code-bg: #0d0f1a;
+  --border: #4a4d6a;
+
+  /* Memorial Day colors */
+  --old-glory-red: #d43f4f;
+  --old-glory-blue: #5c5b8e;
+  --honor-white: #f8f9fa;
+  --remembrance-gray: #868e96;
+  --flag-blue: #1a3a7a;
+}
+
+/* Links - old glory blue */
+a {
+  color: var(--old-glory-blue);
+}
+
+a:hover {
+  color: var(--old-glory-red);
+}
+
+/* Post entries - respectful borders */
+.post-entry {
+  border-left: 4px solid var(--old-glory-blue);
+  border-right: 1px solid var(--remembrance-gray);
+}
+
+.post-entry:hover {
+  border-left-color: var(--old-glory-red);
+  box-shadow: 0 2px 8px rgba(60, 59, 110, 0.2);
+}
+
+/* Buttons - old glory red */
+.button,
+button,
+input[type="submit"] {
+  background-color: var(--old-glory-red);
+  border-color: var(--old-glory-red);
+  color: white;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--flag-blue);
+  border-color: var(--flag-blue);
+}
+
+/* Tags - patriotic colors */
+.post-tags a {
+  background-color: var(--old-glory-blue);
+  color: white;
+}
+
+.post-tags a:hover {
+  background-color: var(--old-glory-red);
+}
+
+/* Highlights - honor white with blue accent */
+mark,
+.highlight {
+  background-color: var(--honor-white);
+  color: var(--primary);
+  border-left: 3px solid var(--old-glory-red);
+}
+
+/* Top link - remembrance gray */
+.top-link {
+  background-color: var(--remembrance-gray);
+  color: white;
+}
+
+.top-link:hover {
+  background-color: var(--old-glory-blue);
+}
+
+/* Code syntax highlighting - Memorial themed */
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal {
+  color: var(--old-glory-red);
+}
+
+.dark .hljs-string,
+.dark .hljs-title,
+.dark .hljs-name {
+  color: var(--old-glory-blue);
+}
+
+.dark .hljs-attribute,
+.dark .hljs-symbol {
+  color: var(--honor-white);
+}
+
+.dark .hljs-function,
+.dark .hljs-class {
+  color: var(--flag-blue);
+}
+
+.dark .hljs-number {
+  color: var(--remembrance-gray);
+}
+
+.dark .hljs-comment {
+  color: #6a6d7a;
+  font-style: italic;
+}
+
+/* Light mode syntax highlighting */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #8b1a2a;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name {
+  color: #2c2b5e;
+}
+
+.hljs-attribute,
+.hljs-symbol {
+  color: #5a5d6a;
+}
+
+.hljs-function,
+.hljs-class {
+  color: #001848;
+}
+
+.hljs-number {
+  color: #4c4f5c;
+}
+
+.hljs-comment {
+  color: #7a7d8a;
+  font-style: italic;
+}

@@ -56,6 +56,20 @@ jobs:
       - name: Auto-switch seasonal theme
         env:
           DEFAULT_THEME: ${{ vars.DEFAULT_THEME || 'catppuccin-macchiato' }}
+          NEW_YEAR_START: ${{ vars.NEW_YEAR_START || '' }}
+          NEW_YEAR_END: ${{ vars.NEW_YEAR_END || '' }}
+          VALENTINES_START: ${{ vars.VALENTINES_START || '' }}
+          VALENTINES_END: ${{ vars.VALENTINES_END || '' }}
+          EASTER_OFFSET_BEFORE: ${{ vars.EASTER_OFFSET_BEFORE || '' }}
+          EASTER_OFFSET_AFTER: ${{ vars.EASTER_OFFSET_AFTER || '' }}
+          MEMORIAL_DAY_START: ${{ vars.MEMORIAL_DAY_START || '' }}
+          MEMORIAL_DAY_END: ${{ vars.MEMORIAL_DAY_END || '' }}
+          INDEPENDENCE_DAY_START: ${{ vars.INDEPENDENCE_DAY_START || '' }}
+          INDEPENDENCE_DAY_END: ${{ vars.INDEPENDENCE_DAY_END || '' }}
+          LABOR_DAY_START: ${{ vars.LABOR_DAY_START || '' }}
+          LABOR_DAY_END: ${{ vars.LABOR_DAY_END || '' }}
+          FALL_START: ${{ vars.FALL_START || '' }}
+          FALL_END: ${{ vars.FALL_END || '' }}
           HALLOWEEN_START: ${{ vars.HALLOWEEN_START || '' }}
           HALLOWEEN_END: ${{ vars.HALLOWEEN_END || '' }}
           THANKSGIVING_START: ${{ vars.THANKSGIVING_START || '' }}

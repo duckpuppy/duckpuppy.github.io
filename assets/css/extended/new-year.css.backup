@@ -1,0 +1,185 @@
+/* New Year color scheme
+ * theme-id: new-year
+ * Fresh starts and celebration with gold, silver, and midnight blue
+ * Colors: #ffd700 (gold), #c0c0c0 (silver), #191970 (midnight blue), #f5f5dc (champagne), #ffffff (white)
+ */
+
+:root {
+  /* Light mode - champagne and gold celebration */
+  --theme: #fffef9;
+  --entry: #f5f5dc;
+  --primary: #191970;
+  --secondary: #4a4a70;
+  --tertiary: #e8e8f0;
+  --content: #191970;
+  --hljs-bg: #f5f5dc;
+  --code-bg: #f0f0e8;
+  --border: #d4af37;
+
+  /* New Year accent colors */
+  --gold: #ffd700;
+  --silver: #c0c0c0;
+  --midnight-blue: #191970;
+  --champagne: #f5f5dc;
+  --rose-gold: #b76e79;
+  --sparkle: #ffffff;
+}
+
+.dark {
+  /* Dark mode - elegant midnight celebration */
+  --theme: #0a0a1a;
+  --entry: #151525;
+  --primary: #f5f5dc;
+  --secondary: #d4d4bc;
+  --tertiary: #252535;
+  --content: #e8e8d0;
+  --hljs-bg: #050510;
+  --code-bg: #0f0f1f;
+  --border: #d4af37;
+
+  /* New Year accent colors */
+  --gold: #ffd700;
+  --silver: #c0c0c0;
+  --midnight-blue: #4169e1;
+  --champagne: #f5f5dc;
+  --rose-gold: #b76e79;
+  --sparkle: #ffffff;
+}
+
+/* Links - shimmering gold */
+a {
+  color: var(--gold);
+}
+
+a:hover {
+  color: var(--silver);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+/* Post entries - elegant borders */
+.post-entry {
+  border-left: 3px solid var(--gold);
+}
+
+.post-entry:hover {
+  border-color: var(--silver);
+  box-shadow: 0 2px 12px rgba(192, 192, 192, 0.3);
+}
+
+/* Buttons - gold celebration */
+.button,
+button,
+input[type="submit"] {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--midnight-blue);
+  font-weight: 600;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--silver);
+  border-color: var(--silver);
+}
+
+/* Tags - midnight blue with gold accent */
+.post-tags a {
+  background-color: var(--midnight-blue);
+  color: var(--champagne);
+  border: 1px solid var(--gold);
+}
+
+.post-tags a:hover {
+  background-color: var(--gold);
+  color: var(--midnight-blue);
+}
+
+/* Highlights - champagne */
+mark,
+.highlight {
+  background-color: var(--champagne);
+  color: var(--midnight-blue);
+}
+
+/* Top link - rose gold */
+.top-link {
+  background-color: var(--rose-gold);
+  color: white;
+}
+
+.top-link:hover {
+  background-color: var(--gold);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Code syntax highlighting - New Year themed */
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal {
+  color: var(--gold);
+}
+
+.dark .hljs-string,
+.dark .hljs-title,
+.dark .hljs-name {
+  color: var(--silver);
+}
+
+.dark .hljs-attribute,
+.dark .hljs-symbol {
+  color: var(--champagne);
+}
+
+.dark .hljs-function,
+.dark .hljs-class {
+  color: var(--midnight-blue);
+}
+
+.dark .hljs-number {
+  color: var(--rose-gold);
+}
+
+.dark .hljs-comment {
+  color: #6a6a7a;
+  font-style: italic;
+}
+
+/* Light mode syntax highlighting */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #b8860b;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name {
+  color: #708090;
+}
+
+.hljs-attribute,
+.hljs-symbol {
+  color: #8b7355;
+}
+
+.hljs-function,
+.hljs-class {
+  color: #191970;
+}
+
+.hljs-number {
+  color: #8b6370;
+}
+
+.hljs-comment {
+  color: #5a5a6a;
+  font-style: italic;
+}
+
+/* Special sparkle effect on headings */
+.dark h1,
+.dark h2 {
+  color: var(--gold);
+  text-shadow: 0 0 4px rgba(255, 215, 0, 0.2);
+}
