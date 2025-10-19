@@ -1,18 +1,41 @@
 #!/usr/bin/env bash
 # Automatic seasonal theme switcher for Hugo blog
 # Switches to seasonal themes one week before holidays, then back to default
+# Uses Nager.Date API for accurate floating holiday dates
 
 set -euo pipefail
 
 THEME_DIR="assets/css/extended"
 ACTIVE_FILE="$THEME_DIR/theme-colors.css"
 DEFAULT_THEME="${DEFAULT_THEME:-catppuccin-macchiato}"
+HOLIDAY_API_URL="https://date.nager.at/api/v3/PublicHolidays"
 
 # Get current date info
 YEAR=$(date +%Y)
 MONTH=$(date +%m | sed 's/^0*//')  # Remove leading zero
 DAY=$(date +%d | sed 's/^0*//')    # Remove leading zero
 DATE_STR=$(date +%Y-%m-%d)
+
+# Fetch holidays from API (with caching)
+CACHE_FILE="/tmp/holidays_cache_${YEAR}.json"
+fetch_holidays() {
+    # Use cached data if less than 24 hours old
+    if [ -f "$CACHE_FILE" ] && [ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE" 2>/dev/null || echo 0))) -lt 86400 ]; then
+        cat "$CACHE_FILE"
+    else
+        local holidays=$(curl -s "${HOLIDAY_API_URL}/${YEAR}/US" 2>/dev/null || echo "[]")
+        echo "$holidays" > "$CACHE_FILE"
+        echo "$holidays"
+    fi
+}
+
+# Function to extract holiday date by name from API data
+get_holiday_date() {
+    local holiday_name="$1"
+    local holidays="$2"
+    # Extract the holiday object and get just the date field
+    echo "$holidays" | grep -o "{[^}]*\"name\":\"${holiday_name}\"[^}]*}" | head -1 | grep -o "\"date\":\"[^\"]*\"" | cut -d'"' -f4
+}
 
 # Function to get current active theme ID
 get_current_theme() {
@@ -84,7 +107,11 @@ calculate_easter() {
     printf "%d-%02d-%02d" "$year" "$month" "$day"
 }
 
-# Calculate Easter and its period
+# Fetch holidays from API
+echo "Fetching holiday dates from Nager.Date API..."
+HOLIDAYS_JSON=$(fetch_holidays)
+
+# Calculate Easter and its period (keep local calculation as fallback)
 EASTER_DATE=$(calculate_easter $YEAR)
 EASTER_OFFSET_BEFORE="${EASTER_OFFSET_BEFORE:-7}"
 EASTER_OFFSET_AFTER="${EASTER_OFFSET_AFTER:-7}"
@@ -106,25 +133,43 @@ ANNIVERSARY_END="${ANNIVERSARY_END:-$YEAR-02-05}"
 VALENTINES_START="${VALENTINES_START:-$YEAR-02-07}"
 VALENTINES_END="${VALENTINES_END:-$YEAR-02-15}"
 
-# Memorial Day: Last Monday of May
-# Active period: Week before Memorial Day (configurable via env vars)
-MEMORIAL_DAY_START="${MEMORIAL_DAY_START:-$YEAR-05-19}"
-MEMORIAL_DAY_END="${MEMORIAL_DAY_END:-$YEAR-05-26}"
+# Memorial Day: Last Monday of May (fetch from API)
+MEMORIAL_DAY_API=$(get_holiday_date "Memorial Day" "$HOLIDAYS_JSON")
+if [ -n "$MEMORIAL_DAY_API" ]; then
+    MEMORIAL_DAY_START="${MEMORIAL_DAY_START:-$(date -d "$MEMORIAL_DAY_API - 7 days" +%Y-%m-%d)}"
+    MEMORIAL_DAY_END="${MEMORIAL_DAY_END:-$(date -d "$MEMORIAL_DAY_API + 1 day" +%Y-%m-%d)}"
+else
+    # Fallback to approximate dates
+    MEMORIAL_DAY_START="${MEMORIAL_DAY_START:-$YEAR-05-19}"
+    MEMORIAL_DAY_END="${MEMORIAL_DAY_END:-$YEAR-05-26}"
+fi
 
 # Birthday: July 1
 # Active period: July 1 only (configurable via env vars)
 BIRTHDAY_START="${BIRTHDAY_START:-$YEAR-07-01}"
 BIRTHDAY_END="${BIRTHDAY_END:-$YEAR-07-02}"
 
-# Independence Day: July 4
-# Active period: Week before through week after (configurable via env vars)
-INDEPENDENCE_DAY_START="${INDEPENDENCE_DAY_START:-$YEAR-06-27}"
-INDEPENDENCE_DAY_END="${INDEPENDENCE_DAY_END:-$YEAR-07-11}"
+# Independence Day: July 4 (fetch from API)
+INDEPENDENCE_DAY_API=$(get_holiday_date "Independence Day" "$HOLIDAYS_JSON")
+if [ -n "$INDEPENDENCE_DAY_API" ]; then
+    INDEPENDENCE_DAY_START="${INDEPENDENCE_DAY_START:-$(date -d "$INDEPENDENCE_DAY_API - 7 days" +%Y-%m-%d)}"
+    INDEPENDENCE_DAY_END="${INDEPENDENCE_DAY_END:-$(date -d "$INDEPENDENCE_DAY_API + 7 days" +%Y-%m-%d)}"
+else
+    # Fallback to July 4
+    INDEPENDENCE_DAY_START="${INDEPENDENCE_DAY_START:-$YEAR-06-27}"
+    INDEPENDENCE_DAY_END="${INDEPENDENCE_DAY_END:-$YEAR-07-11}"
+fi
 
-# Labor Day: First Monday of September
-# Active period: Week before through week after (configurable via env vars)
-LABOR_DAY_START="${LABOR_DAY_START:-$YEAR-08-25}"
-LABOR_DAY_END="${LABOR_DAY_END:-$YEAR-09-08}"
+# Labor Day: First Monday of September (fetch from API)
+LABOR_DAY_API=$(get_holiday_date "Labour Day" "$HOLIDAYS_JSON")
+if [ -n "$LABOR_DAY_API" ]; then
+    LABOR_DAY_START="${LABOR_DAY_START:-$(date -d "$LABOR_DAY_API - 7 days" +%Y-%m-%d)}"
+    LABOR_DAY_END="${LABOR_DAY_END:-$(date -d "$LABOR_DAY_API + 7 days" +%Y-%m-%d)}"
+else
+    # Fallback to approximate dates
+    LABOR_DAY_START="${LABOR_DAY_START:-$YEAR-08-25}"
+    LABOR_DAY_END="${LABOR_DAY_END:-$YEAR-09-08}"
+fi
 
 # Fall: Mid-September through late October
 # Active period: Between Labor Day and Halloween (configurable via env vars)
@@ -136,10 +181,16 @@ FALL_END="${FALL_END:-$YEAR-10-23}"
 HALLOWEEN_START="${HALLOWEEN_START:-$YEAR-10-24}"
 HALLOWEEN_END="${HALLOWEEN_END:-$YEAR-11-01}"
 
-# Thanksgiving: 4th Thursday of November (approximate: Nov 22-28)
-# Active period: Nov 15 - Nov 29 (configurable via env vars)
-THANKSGIVING_START="${THANKSGIVING_START:-$YEAR-11-15}"
-THANKSGIVING_END="${THANKSGIVING_END:-$YEAR-11-29}"
+# Thanksgiving: 4th Thursday of November (fetch from API)
+THANKSGIVING_API=$(get_holiday_date "Thanksgiving Day" "$HOLIDAYS_JSON")
+if [ -n "$THANKSGIVING_API" ]; then
+    THANKSGIVING_START="${THANKSGIVING_START:-$(date -d "$THANKSGIVING_API - 12 days" +%Y-%m-%d)}"
+    THANKSGIVING_END="${THANKSGIVING_END:-$(date -d "$THANKSGIVING_API + 2 days" +%Y-%m-%d)}"
+else
+    # Fallback to approximate dates
+    THANKSGIVING_START="${THANKSGIVING_START:-$YEAR-11-15}"
+    THANKSGIVING_END="${THANKSGIVING_END:-$YEAR-11-29}"
+fi
 
 # Christmas: December 25
 # Active period: Dec 18 - Dec 26 (configurable via env vars)

@@ -153,6 +153,12 @@ The blog has multiple color schemes available in `assets/css/extended/`.
 
 The nightly build (12 AM EST) runs `scripts/auto-theme.sh` to check and switch themes automatically.
 
+**Smart Holiday Detection:** The auto-theme script uses the [Nager.Date API](https://date.nager.at/) to automatically fetch accurate dates for floating holidays (Memorial Day, Labor Day, Thanksgiving) each year. This ensures themes activate on the correct dates even as holidays shift. The script:
+- Fetches holiday data from a free, no-auth public API
+- Caches results for 24 hours to minimize API calls
+- Falls back to approximate dates if API is unavailable
+- Calculates Easter locally using the Computus algorithm
+
 **Configuring Automation:** Set GitHub Actions variables to customize behavior:
 - Go to: Settings → Secrets and variables → Actions → Variables tab
 - Available variables:
