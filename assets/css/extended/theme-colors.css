@@ -1,191 +1,203 @@
-/* Catppuccin Macchiato color scheme
- * theme-id: catppuccin-macchiato
- * Official palette: https://github.com/catppuccin/catppuccin
- * Medium contrast with gentle colors creating a soothing atmosphere
+/* Fall/Autumn color scheme
+ * theme-id: fall
+ * Cozy autumn vibes with falling leaves and harvest tones
+ * Colors: #d2691e (chocolate), #ff8c00 (dark orange), #8b4513 (saddle brown), #daa520 (goldenrod), #8b0000 (dark red)
  */
 
 :root {
-  /* Light mode - using lighter Catppuccin colors for readability */
-  --theme: #eff1f5;
-  --entry: #e6e9ef;
-  --primary: #4c4f69;
-  --secondary: #6c6f85;
-  --tertiary: #ccd0da;
-  --content: #4c4f69;
-  --hljs-bg: #e6e9ef;
-  --code-bg: #dce0e8;
-  --border: #bcc0cc;
+  /* Light mode - crisp autumn day */
+  --theme: #fdf8f3;
+  --entry: #f5ebe0;
+  --primary: #4a2511;
+  --secondary: #6b3d1f;
+  --tertiary: #e8d5c4;
+  --content: #4a2511;
+  --hljs-bg: #f5ebe0;
+  --code-bg: #ede1d6;
+  --border: #c9a87c;
 
-  /* Catppuccin Macchiato accent colors */
-  --rosewater: #f4dbd6;
-  --flamingo: #f0c6c6;
-  --pink: #f5bde6;
-  --mauve: #c6a0f6;
-  --red: #ed8796;
-  --maroon: #ee99a0;
-  --peach: #f5a97f;
-  --yellow: #eed49f;
-  --green: #a6da95;
-  --teal: #8bd5ca;
-  --sky: #91d7e3;
-  --sapphire: #7dc4e4;
-  --blue: #8aadf4;
-  --lavender: #b7bdf8;
+  /* Fall colors */
+  --burnt-orange: #cc5500;
+  --deep-red: #8b0000;
+  --golden-yellow: #daa520;
+  --ochre: #cc7722;
+  --russet: #80461b;
+  --amber: #ffbf00;
 }
 
 .dark {
-  /* Dark mode - Catppuccin Macchiato colors */
-  --theme: #24273a;
-  --entry: #1e2030;
-  --primary: #cad3f5;
-  --secondary: #a5adcb;
-  --tertiary: #363a4f;
-  --content: #cad3f5;
-  --hljs-bg: #1e2030;
-  --code-bg: #181926;
-  --border: #494d64;
+  /* Dark mode - cozy autumn evening */
+  --theme: #2a1810;
+  --entry: #3a2418;
+  --primary: #f5deb3;
+  --secondary: #d4a574;
+  --tertiary: #4a3020;
+  --content: #e8d5c4;
+  --hljs-bg: #1a0f08;
+  --code-bg: #2a1810;
+  --border: #8b4513;
 
-  /* Catppuccin Macchiato accent colors (same in dark mode) */
-  --rosewater: #f4dbd6;
-  --flamingo: #f0c6c6;
-  --pink: #f5bde6;
-  --mauve: #c6a0f6;
-  --red: #ed8796;
-  --maroon: #ee99a0;
-  --peach: #f5a97f;
-  --yellow: #eed49f;
-  --green: #a6da95;
-  --teal: #8bd5ca;
-  --sky: #91d7e3;
-  --sapphire: #7dc4e4;
-  --blue: #8aadf4;
-  --lavender: #b7bdf8;
+  /* Fall colors */
+  --burnt-orange: #ff8c00;
+  --deep-red: #cd5c5c;
+  --golden-yellow: #ffd700;
+  --ochre: #dd8833;
+  --russet: #a0632a;
+  --amber: #ffcc00;
 }
 
-/* Apply accent colors to links */
+/* Links - burnt orange */
 a {
-  color: var(--blue);
+  color: var(--burnt-orange);
 }
 
 a:hover {
-  color: var(--sapphire);
+  color: var(--golden-yellow);
 }
 
-/* Use mauve for post entry borders on hover */
+/* Post entries - autumn leaves */
+.post-entry {
+  border-left: 4px solid var(--burnt-orange);
+  background: linear-gradient(to right, transparent, rgba(204, 85, 0, 0.02));
+}
+
 .post-entry:hover {
-  border-color: var(--mauve);
+  border-color: var(--deep-red);
+  box-shadow: 0 2px 8px rgba(139, 0, 0, 0.15);
 }
 
-/* Use blue for buttons and interactive elements */
+/* Buttons - deep red */
 .button,
 button,
 input[type="submit"] {
-  background-color: var(--blue);
-  border-color: var(--blue);
-  color: var(--theme);
+  background-color: var(--deep-red);
+  border-color: var(--deep-red);
+  color: #f5deb3;
 }
 
 .button:hover,
 button:hover,
 input[type="submit"]:hover {
-  background-color: var(--sapphire);
-  border-color: var(--sapphire);
+  background-color: var(--burnt-orange);
+  border-color: var(--burnt-orange);
 }
 
-/* Use green for tags */
+/* Tags - golden yellow and ochre */
 .post-tags a {
-  background-color: var(--green);
-  color: var(--theme);
+  background-color: var(--golden-yellow);
+  color: var(--russet);
+  border: 1px solid var(--ochre);
 }
 
 .post-tags a:hover {
-  background-color: var(--teal);
+  background-color: var(--amber);
+  border-color: var(--burnt-orange);
 }
 
-/* Use yellow for highlighted content */
+/* Highlights - amber */
 mark,
 .highlight {
-  background-color: var(--yellow);
-  color: var(--primary);
+  background-color: var(--amber);
+  color: var(--russet);
 }
 
-/* Navigation and header accents */
+/* Top link - ochre */
 .top-link {
-  background-color: var(--mauve);
+  background-color: var(--ochre);
+  color: white;
 }
 
 .top-link:hover {
-  background-color: var(--lavender);
+  background-color: var(--burnt-orange);
 }
 
-/* Code syntax highlighting with Catppuccin colors */
+/* Code syntax highlighting - Fall themed */
 .dark .hljs-keyword,
 .dark .hljs-selector-tag,
 .dark .hljs-literal {
-  color: var(--mauve);
+  color: var(--deep-red);
 }
 
 .dark .hljs-string,
 .dark .hljs-title,
 .dark .hljs-name {
-  color: var(--green);
+  color: var(--golden-yellow);
 }
 
 .dark .hljs-attribute,
 .dark .hljs-symbol {
-  color: var(--yellow);
+  color: var(--ochre);
 }
 
 .dark .hljs-function,
 .dark .hljs-class {
-  color: var(--blue);
+  color: var(--burnt-orange);
 }
 
 .dark .hljs-number {
-  color: var(--peach);
+  color: var(--amber);
 }
 
 .dark .hljs-comment {
-  color: var(--overlay1);
+  color: #8a7a6a;
   font-style: italic;
-}
-
-.dark .hljs-variable {
-  color: var(--text);
-}
-
-.dark .hljs-type {
-  color: var(--sky);
 }
 
 /* Light mode syntax highlighting */
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #8839ef; /* Darker mauve for light mode */
+  color: #6b0000;
 }
 
 .hljs-string,
 .hljs-title,
 .hljs-name {
-  color: #40a02b; /* Darker green for light mode */
+  color: #b8860b;
 }
 
 .hljs-attribute,
 .hljs-symbol {
-  color: #df8e1d; /* Darker yellow for light mode */
+  color: #a0632a;
 }
 
 .hljs-function,
 .hljs-class {
-  color: #1e66f5; /* Darker blue for light mode */
+  color: #8b4513;
 }
 
 .hljs-number {
-  color: #fe640b; /* Darker peach for light mode */
+  color: #cc8800;
 }
 
 .hljs-comment {
-  color: #9ca0b0;
+  color: #8b7355;
   font-style: italic;
+}
+
+/* Falling leaves effect on headings */
+.dark h1,
+.dark h2 {
+  color: var(--amber);
+}
+
+.post-title {
+  color: var(--burnt-orange);
+}
+
+.dark .post-title {
+  color: var(--golden-yellow);
+}
+
+/* Autumn leaf decorations */
+h1::before,
+h2::before {
+  content: "🍂 ";
+  color: var(--burnt-orange);
+}
+
+.dark h1::before,
+.dark h2::before {
+  content: "🍂 ";
+  color: var(--amber);
 }
