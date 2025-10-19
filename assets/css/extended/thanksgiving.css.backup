@@ -1,0 +1,174 @@
+/* Thanksgiving color scheme
+ * theme-id: thanksgiving
+ * Warm autumn colors inspired by harvest season
+ * Colors: #8b4513 (saddle brown), #d2691e (chocolate), #ff8c00 (dark orange), #daa520 (goldenrod), #8b0000 (dark red)
+ */
+
+:root {
+  /* Light mode - warm harvest colors */
+  --theme: #fdf8f3;
+  --entry: #f5ebe0;
+  --primary: #4a2511;
+  --secondary: #6b3d1f;
+  --tertiary: #e8d5c4;
+  --content: #4a2511;
+  --hljs-bg: #f5ebe0;
+  --code-bg: #ede1d6;
+  --border: #c9a87c;
+
+  /* Thanksgiving accent colors */
+  --saddle-brown: #8b4513;
+  --chocolate: #d2691e;
+  --dark-orange: #ff8c00;
+  --goldenrod: #daa520;
+  --dark-red: #8b0000;
+  --burnt-sienna: #e97451;
+  --wheat: #f5deb3;
+}
+
+.dark {
+  /* Dark mode - cozy autumn evening */
+  --theme: #2a1810;
+  --entry: #3a2418;
+  --primary: #f5deb3;
+  --secondary: #d4a574;
+  --tertiary: #4a3020;
+  --content: #e8d5c4;
+  --hljs-bg: #1a0f08;
+  --code-bg: #2a1810;
+  --border: #8b4513;
+
+  /* Thanksgiving accent colors */
+  --saddle-brown: #a0632a;
+  --chocolate: #d2691e;
+  --dark-orange: #ff8c00;
+  --goldenrod: #daa520;
+  --dark-red: #b22222;
+  --burnt-sienna: #e97451;
+  --wheat: #f5deb3;
+}
+
+/* Links - warm goldenrod */
+a {
+  color: var(--dark-orange);
+}
+
+a:hover {
+  color: var(--goldenrod);
+}
+
+/* Post entries - harvest theme */
+.post-entry {
+  border-left: 3px solid var(--saddle-brown);
+}
+
+.post-entry:hover {
+  border-color: var(--dark-orange);
+  background-color: rgba(218, 165, 32, 0.05);
+}
+
+/* Buttons - rich autumn colors */
+.button,
+button,
+input[type="submit"] {
+  background-color: var(--saddle-brown);
+  border-color: var(--saddle-brown);
+  color: var(--wheat);
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--chocolate);
+  border-color: var(--chocolate);
+}
+
+/* Tags - warm orange tones */
+.post-tags a {
+  background-color: var(--dark-orange);
+  color: var(--theme);
+}
+
+.post-tags a:hover {
+  background-color: var(--goldenrod);
+}
+
+/* Highlights - wheat color */
+mark,
+.highlight {
+  background-color: var(--wheat);
+  color: var(--primary);
+}
+
+/* Top link - burnt sienna */
+.top-link {
+  background-color: var(--burnt-sienna);
+}
+
+.top-link:hover {
+  background-color: var(--dark-orange);
+}
+
+/* Code syntax highlighting - Thanksgiving themed */
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal {
+  color: var(--dark-red);
+}
+
+.dark .hljs-string,
+.dark .hljs-title,
+.dark .hljs-name {
+  color: var(--goldenrod);
+}
+
+.dark .hljs-attribute,
+.dark .hljs-symbol {
+  color: var(--burnt-sienna);
+}
+
+.dark .hljs-function,
+.dark .hljs-class {
+  color: var(--dark-orange);
+}
+
+.dark .hljs-number {
+  color: var(--chocolate);
+}
+
+.dark .hljs-comment {
+  color: #8a7a6a;
+  font-style: italic;
+}
+
+/* Light mode syntax highlighting */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #6b0000;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name {
+  color: #b8860b;
+}
+
+.hljs-attribute,
+.hljs-symbol {
+  color: #c75d3c;
+}
+
+.hljs-function,
+.hljs-class {
+  color: #cc6600;
+}
+
+.hljs-number {
+  color: #a0522d;
+}
+
+.hljs-comment {
+  color: #8b7355;
+  font-style: italic;
+}

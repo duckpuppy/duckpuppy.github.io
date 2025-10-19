@@ -50,18 +50,34 @@ The site is generated to the `public/` directory.
 
 ### Switch Color Themes
 
-The blog supports multiple color themes:
+The blog supports multiple color themes including seasonal palettes:
 
 ```bash
 # List available themes
 mise run theme-list
 
 # Switch to a different theme
-mise run theme palette17
-mise run theme catppuccin-macchiato
+mise run theme catppuccin-macchiato  # Default, year-round
+mise run theme palette17              # Bold vibrant colors
+
+# Seasonal themes
+mise run theme halloween              # Spooky oranges and purples (October)
+mise run theme thanksgiving           # Warm autumn harvest (November)
+mise run theme christmas              # Festive reds, greens, golds (December)
 ```
 
-Current themes include Catppuccin Macchiato (soothing pastels) and Palette #17 (bold vibrant colors).
+Themes include light and dark mode variants with coordinated syntax highlighting.
+
+## Deployment
+
+The blog is automatically deployed to GitHub Pages at https://duckpuppy.com.
+
+Every push to `main` triggers a GitHub Actions workflow that:
+- Builds the Hugo site with the latest content
+- Deploys to GitHub Pages
+- Updates the live site in 1-2 minutes
+
+Check deployment status in the repository's "Actions" tab.
 
 ## Project Structure
 

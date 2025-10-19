@@ -1,0 +1,174 @@
+/* Halloween color scheme
+ * theme-id: halloween
+ * Spooky oranges, purples, and blacks for October festivities
+ * Colors: #1a1a1a (midnight), #ff6600 (pumpkin), #9933ff (purple), #00ff00 (neon green), #ffaa00 (candy corn)
+ */
+
+:root {
+  /* Light mode - lighter Halloween colors */
+  --theme: #fff8f0;
+  --entry: #ffe8d6;
+  --primary: #2a1a0a;
+  --secondary: #5a3a1a;
+  --tertiary: #ffd4a3;
+  --content: #2a1a0a;
+  --hljs-bg: #ffe8d6;
+  --code-bg: #ffd9b3;
+  --border: #ff9933;
+
+  /* Halloween accent colors */
+  --pumpkin: #ff6600;
+  --purple: #9933ff;
+  --neon-green: #00ff00;
+  --candy-corn: #ffaa00;
+  --midnight: #1a1a1a;
+  --ghost-white: #f0f0f0;
+}
+
+.dark {
+  /* Dark mode - spooky Halloween atmosphere */
+  --theme: #1a1a1a;
+  --entry: #252525;
+  --primary: #ff9933;
+  --secondary: #cc7722;
+  --tertiary: #333333;
+  --content: #ffaa66;
+  --hljs-bg: #0d0d0d;
+  --code-bg: #1f1f1f;
+  --border: #ff6600;
+
+  /* Halloween accent colors */
+  --pumpkin: #ff6600;
+  --purple: #9933ff;
+  --neon-green: #00ff00;
+  --candy-corn: #ffaa00;
+  --midnight: #0a0a0a;
+  --ghost-white: #f0f0f0;
+}
+
+/* Links - vibrant pumpkin orange */
+a {
+  color: var(--pumpkin);
+}
+
+a:hover {
+  color: var(--candy-corn);
+}
+
+/* Post entries with purple accent */
+.post-entry {
+  border-left: 3px solid var(--pumpkin);
+}
+
+.post-entry:hover {
+  border-color: var(--purple);
+  box-shadow: 0 2px 8px rgba(153, 51, 255, 0.2);
+}
+
+/* Buttons - pumpkin orange */
+.button,
+button,
+input[type="submit"] {
+  background-color: var(--pumpkin);
+  border-color: var(--pumpkin);
+  color: var(--midnight);
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--purple);
+  border-color: var(--purple);
+}
+
+/* Tags - purple with glow effect */
+.post-tags a {
+  background-color: var(--purple);
+  color: white;
+}
+
+.post-tags a:hover {
+  background-color: var(--pumpkin);
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+}
+
+/* Highlights - neon green for spooky effect */
+mark,
+.highlight {
+  background-color: var(--neon-green);
+  color: var(--midnight);
+}
+
+/* Top link - candy corn colors */
+.top-link {
+  background-color: var(--candy-corn);
+  color: var(--midnight);
+}
+
+.top-link:hover {
+  background-color: var(--pumpkin);
+}
+
+/* Code syntax highlighting - Halloween themed */
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal {
+  color: var(--purple);
+}
+
+.dark .hljs-string,
+.dark .hljs-title,
+.dark .hljs-name {
+  color: var(--pumpkin);
+}
+
+.dark .hljs-attribute,
+.dark .hljs-symbol {
+  color: var(--candy-corn);
+}
+
+.dark .hljs-function,
+.dark .hljs-class {
+  color: var(--neon-green);
+}
+
+.dark .hljs-number {
+  color: var(--candy-corn);
+}
+
+.dark .hljs-comment {
+  color: #666666;
+  font-style: italic;
+}
+
+/* Light mode syntax highlighting */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #7700cc;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name {
+  color: #cc5200;
+}
+
+.hljs-attribute,
+.hljs-symbol {
+  color: #cc8800;
+}
+
+.hljs-function,
+.hljs-class {
+  color: #009900;
+}
+
+.hljs-number {
+  color: #ff8800;
+}
+
+.hljs-comment {
+  color: #8a6a3a;
+  font-style: italic;
+}

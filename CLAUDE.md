@@ -39,6 +39,55 @@ mise run new -- 'Your Post Title'
 ```
 Creates a new post in `content/posts/` with the date and slugified title.
 
+## Deployment
+
+The site is automatically deployed to GitHub Pages using GitHub Actions.
+
+### Initial Setup (One-time)
+
+1. **Archive old repository** (on GitHub web):
+   - Rename `duckpuppy.github.io` to `duckpuppy.github.io-archive`
+   - Disable GitHub Pages on the archived repo
+
+2. **Create new repository** (on GitHub web):
+   - Create new public repo named `duckpuppy.github.io`
+   - Don't initialize with README
+
+3. **Configure GitHub Pages** (on GitHub web):
+   - Go to Settings → Pages
+   - Source: **GitHub Actions** (not branch)
+   - Custom domain: `duckpuppy.com`
+   - Enable "Enforce HTTPS" after DNS propagates
+
+4. **Push to new repository**:
+   ```bash
+   git remote add origin git@github.com:duckpuppy/duckpuppy.github.io.git
+   git push -u origin main
+   ```
+
+### Automatic Deployment
+
+Every push to `main` triggers the GitHub Actions workflow (`.github/workflows/hugo.yaml`):
+- Installs Hugo extended v0.148.1
+- Builds the site with minification
+- Deploys to GitHub Pages
+- Typically completes in 1-2 minutes
+
+View deployment status in the "Actions" tab on GitHub.
+
+### Manual Deployment
+
+To trigger a deployment manually:
+- Go to Actions → Deploy Hugo site to Pages → Run workflow
+
+### Local Testing Before Deploy
+
+Always test locally before pushing:
+```bash
+mise run serve  # Test with drafts
+mise run build  # Test production build
+```
+
 ## Project Structure
 
 - **`hugo.toml`**: Main Hugo configuration file
@@ -85,18 +134,38 @@ Posts are in `content/posts/` and support all Hugo markdown features including s
 
 ## Color Schemes
 
-The blog has two available color schemes in `assets/css/extended/`:
+The blog has multiple color schemes available in `assets/css/extended/`:
 
-### Active: Catppuccin Macchiato (theme-colors.css)
+### Default: Catppuccin Macchiato
 - Official Catppuccin Macchiato palette
 - Soothing pastel colors with medium contrast
 - Dark mode: `#24273a` base with pastel accents
 - Light mode: Lighter variant with adjusted contrast
+- Best for: Year-round use, easy on the eyes
 
-### Available: Palette #17 (palette17.css.backup)
-- Visme website color palette #17
+### Seasonal Themes
+
+**Halloween**
+- Spooky oranges, purples, and blacks
+- Colors: `#ff6600` (pumpkin), `#9933ff` (purple), `#00ff00` (neon green)
+- Best for: October festivities
+
+**Thanksgiving**
+- Warm autumn harvest colors
+- Colors: `#8b4513` (saddle brown), `#ff8c00` (dark orange), `#daa520` (goldenrod)
+- Best for: November, cozy autumn vibes
+
+**Christmas**
+- Festive reds, greens, and golds
+- Colors: `#165b33` (evergreen), `#bb2528` (christmas red), `#f8b229` (gold)
+- Best for: December holiday season
+
+### Other Themes
+
+**Palette #17**
 - Bold, modern palette with vibrant accents
 - Colors: `#272727`, `#747474`, `#FF652F`, `#FFE400`, `#14A76C`
+- Best for: High energy, modern aesthetic
 
 ### Switching Color Schemes
 
@@ -112,6 +181,11 @@ mise run theme
 # Switch to a specific theme
 mise run theme palette17
 mise run theme catppuccin-macchiato
+
+# Seasonal themes
+mise run theme halloween
+mise run theme thanksgiving
+mise run theme christmas
 ```
 
 The active theme is always `theme-colors.css`. Inactive themes are stored as `*.css.backup` files.
