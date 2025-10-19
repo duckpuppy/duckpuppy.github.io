@@ -188,3 +188,16 @@ mark,
 .dark .post-title {
   color: var(--golden-yellow);
 }
+
+/* Autumn leaf decorations */
+h1::before,
+h2::before {
+  content: "🍂 ";
+  color: var(--burnt-orange);
+}
+
+.dark h1::before,
+.dark h2::before {
+  content: "🍂 ";
+  color: var(--amber);
+}

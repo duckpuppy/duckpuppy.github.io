@@ -172,3 +172,16 @@ mark,
   color: #8a6a3a;
   font-style: italic;
 }
+
+/* Spooky pumpkin decorations */
+h1::before,
+h2::before {
+  content: "🎃 ";
+  color: var(--pumpkin);
+}
+
+.dark h1::before,
+.dark h2::before {
+  content: "🎃 ";
+  color: var(--pumpkin);
+}

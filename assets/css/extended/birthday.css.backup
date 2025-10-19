@@ -1,0 +1,220 @@
+/* Birthday color scheme
+ * theme-id: birthday
+ * Celebration and joy with balloons, cake, and confetti
+ * Colors: #ff6b9d (pink), #ffd93d (yellow), #6bcf7f (green), #4d9de0 (blue), #bb9af7 (purple)
+ */
+
+:root {
+  /* Light mode - bright celebration */
+  --theme: #fffef9;
+  --entry: #fff5f8;
+  --primary: #2a2a4a;
+  --secondary: #4a4a6a;
+  --tertiary: #f0e8ff;
+  --content: #2a2a4a;
+  --hljs-bg: #fff5f8;
+  --code-bg: #ffe8f0;
+  --border: #ffc0e0;
+
+  /* Birthday celebration colors */
+  --party-pink: #ff6b9d;
+  --balloon-yellow: #ffd93d;
+  --confetti-green: #6bcf7f;
+  --sky-blue: #4d9de0;
+  --celebration-purple: #bb9af7;
+  --cake-white: #fffef9;
+  --candle-orange: #ff9a3c;
+}
+
+.dark {
+  /* Dark mode - evening party vibes */
+  --theme: #1a1a2e;
+  --entry: #25253e;
+  --primary: #f5e6ff;
+  --secondary: #d5c6ef;
+  --tertiary: #35354e;
+  --content: #e8d8f8;
+  --hljs-bg: #0f0f1e;
+  --code-bg: #1a1a2e;
+  --border: #5a4a7a;
+
+  /* Birthday celebration colors */
+  --party-pink: #ff6b9d;
+  --balloon-yellow: #ffd93d;
+  --confetti-green: #6bcf7f;
+  --sky-blue: #4d9de0;
+  --celebration-purple: #bb9af7;
+  --cake-white: #fffef9;
+  --candle-orange: #ff9a3c;
+}
+
+/* Links - vibrant party pink */
+a {
+  color: var(--party-pink);
+}
+
+a:hover {
+  color: var(--sky-blue);
+  text-shadow: 0 0 8px rgba(77, 157, 224, 0.3);
+}
+
+/* Post entries - rainbow celebration borders */
+.post-entry {
+  border-left: 3px solid var(--party-pink);
+  border-image: linear-gradient(
+    to bottom,
+    var(--party-pink),
+    var(--balloon-yellow),
+    var(--confetti-green),
+    var(--sky-blue),
+    var(--celebration-purple)
+  ) 1;
+}
+
+.post-entry:hover {
+  box-shadow: 0 2px 12px rgba(255, 107, 157, 0.3),
+              0 4px 16px rgba(77, 157, 224, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Buttons - balloon yellow */
+.button,
+button,
+input[type="submit"] {
+  background: linear-gradient(135deg, var(--balloon-yellow), var(--candle-orange));
+  border-color: var(--balloon-yellow);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  background: linear-gradient(135deg, var(--party-pink), var(--celebration-purple));
+  border-color: var(--party-pink);
+  color: white;
+}
+
+/* Tags - rainbow confetti */
+.post-tags a {
+  background-color: var(--celebration-purple);
+  color: white;
+  border: 1px solid var(--party-pink);
+}
+
+.post-tags a:hover {
+  background-color: var(--sky-blue);
+  border-color: var(--confetti-green);
+}
+
+/* Highlights - bright yellow */
+mark,
+.highlight {
+  background-color: var(--balloon-yellow);
+  color: var(--primary);
+  border-left: 3px solid var(--party-pink);
+}
+
+/* Top link - party pink */
+.top-link {
+  background: linear-gradient(135deg, var(--party-pink), var(--celebration-purple));
+  color: white;
+}
+
+.top-link:hover {
+  background: linear-gradient(135deg, var(--sky-blue), var(--confetti-green));
+  box-shadow: 0 0 15px rgba(77, 157, 224, 0.5);
+}
+
+/* Code syntax highlighting - Birthday themed */
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal {
+  color: var(--party-pink);
+}
+
+.dark .hljs-string,
+.dark .hljs-title,
+.dark .hljs-name {
+  color: var(--balloon-yellow);
+}
+
+.dark .hljs-attribute,
+.dark .hljs-symbol {
+  color: var(--sky-blue);
+}
+
+.dark .hljs-function,
+.dark .hljs-class {
+  color: var(--confetti-green);
+}
+
+.dark .hljs-number {
+  color: var(--celebration-purple);
+}
+
+.dark .hljs-comment {
+  color: #8a7a9a;
+  font-style: italic;
+}
+
+/* Light mode syntax highlighting */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #d62860;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name {
+  color: #c9a500;
+}
+
+.hljs-attribute,
+.hljs-symbol {
+  color: #2d7ab0;
+}
+
+.hljs-function,
+.hljs-class {
+  color: #3a9d5a;
+}
+
+.hljs-number {
+  color: #8b6ad0;
+}
+
+.hljs-comment {
+  color: #7a6a8a;
+  font-style: italic;
+}
+
+/* Special celebration effect */
+.dark h1,
+.dark h2 {
+  color: var(--balloon-yellow);
+  text-shadow: 0 0 8px rgba(255, 217, 61, 0.3);
+}
+
+.post-title {
+  color: var(--party-pink);
+}
+
+.dark .post-title {
+  color: var(--celebration-purple);
+}
+
+/* Birthday cake decorations */
+h1::before,
+h2::before {
+  content: "🎂 ";
+  color: var(--party-pink);
+}
+
+.dark h1::before,
+.dark h2::before {
+  content: "🎂 ";
+  color: var(--balloon-yellow);
+}

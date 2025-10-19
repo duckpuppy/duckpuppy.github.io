@@ -171,3 +171,14 @@ mark,
   color: #7a7d8a;
   font-style: italic;
 }
+
+/* Patriotic decorations */
+h1::before,
+h2::before {
+  content: "🇺🇸 ";
+}
+
+.dark h1::before,
+.dark h2::before {
+  content: "🇺🇸 ";
+}

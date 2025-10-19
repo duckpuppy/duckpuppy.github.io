@@ -193,3 +193,16 @@ mark,
 .dark .post-title {
   color: var(--gold);
 }
+
+/* Christmas tree decorations */
+h1::before,
+h2::before {
+  content: "🎄 ";
+  color: var(--forest-green);
+}
+
+.dark h1::before,
+.dark h2::before {
+  content: "🎄 ";
+  color: var(--gold);
+}

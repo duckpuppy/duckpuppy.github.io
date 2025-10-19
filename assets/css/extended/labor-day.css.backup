@@ -170,3 +170,16 @@ mark,
   color: #6b7280;
   font-style: italic;
 }
+
+/* Worker appreciation decorations */
+h1::before,
+h2::before {
+  content: "👷 ";
+  color: var(--worker-navy);
+}
+
+.dark h1::before,
+.dark h2::before {
+  content: "👷 ";
+  color: var(--honest-tan);
+}

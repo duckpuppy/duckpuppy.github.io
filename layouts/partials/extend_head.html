@@ -1,4 +1,4 @@
-{{- if or (site.IsServer) (eq hugo.Environment "development") }}
+{{- if eq hugo.Environment "development" }}
 <!-- Theme Selector - Only in Development Mode -->
 <style>
   #theme-selector {
@@ -81,9 +81,11 @@
       <option value="">-- Select Theme --</option>
       <optgroup label="Seasonal">
         <option value="new-year">🎊 New Year</option>
+        <option value="anniversary">💍 Anniversary (Feb 4)</option>
         <option value="valentines">💝 Valentine's Day</option>
         <option value="easter">🐰 Easter</option>
         <option value="memorial-day">🇺🇸 Memorial Day</option>
+        <option value="birthday">🎂 Birthday (July 1)</option>
         <option value="independence-day">🎆 Independence Day</option>
         <option value="labor-day">👷 Labor Day</option>
         <option value="fall">🍂 Fall/Autumn</option>

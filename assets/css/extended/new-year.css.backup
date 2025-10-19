@@ -183,3 +183,16 @@ mark,
   color: var(--gold);
   text-shadow: 0 0 4px rgba(255, 215, 0, 0.2);
 }
+
+/* New Year celebration decorations */
+h1::before,
+h2::before {
+  content: "🎊 ";
+  color: var(--gold);
+}
+
+.dark h1::before,
+.dark h2::before {
+  content: "🎊 ";
+  color: var(--gold);
+}

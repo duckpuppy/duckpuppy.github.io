@@ -1,0 +1,215 @@
+/* Anniversary color scheme
+ * theme-id: anniversary
+ * Elegant celebration of love and commitment with roses, champagne, and gold
+ * Colors: #8b4789 (amethyst), #d4af37 (gold), #fff5f7 (blush), #4a4a4a (charcoal), #c9a0dc (lavender)
+ */
+
+:root {
+  /* Light mode - elegant daytime celebration */
+  --theme: #fffef9;
+  --entry: #fff5f7;
+  --primary: #4a2c4a;
+  --secondary: #6a4a6a;
+  --tertiary: #f5e8f0;
+  --content: #4a2c4a;
+  --hljs-bg: #fff5f7;
+  --code-bg: #f5e8f0;
+  --border: #e8c0d8;
+
+  /* Anniversary celebration colors */
+  --rose-gold: #b76e79;
+  --champagne: #f7e7ce;
+  --amethyst: #8b4789;
+  --elegant-gold: #d4af37;
+  --blush: #fff0f5;
+  --deep-rose: #8e4e6f;
+  --lavender-rose: #c9a0dc;
+  --silk-white: #fffef9;
+}
+
+.dark {
+  /* Dark mode - intimate evening celebration */
+  --theme: #1a1020;
+  --entry: #2a1828;
+  --primary: #f5e8f0;
+  --secondary: #d5c8d8;
+  --tertiary: #3a2838;
+  --content: #e8d8e8;
+  --hljs-bg: #0f0810;
+  --code-bg: #1a1020;
+  --border: #6a4a6a;
+
+  /* Anniversary celebration colors */
+  --rose-gold: #d4a5b0;
+  --champagne: #f7e7ce;
+  --amethyst: #a865a5;
+  --elegant-gold: #d4af37;
+  --blush: #fff0f5;
+  --deep-rose: #b06a8f;
+  --lavender-rose: #c9a0dc;
+  --silk-white: #fafafa;
+}
+
+/* Links - elegant rose gold */
+a {
+  color: var(--rose-gold);
+}
+
+a:hover {
+  color: var(--elegant-gold);
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+/* Post entries - romantic borders with subtle gradient */
+.post-entry {
+  border-left: 3px solid var(--amethyst);
+  background: linear-gradient(to right, rgba(139, 71, 137, 0.03), transparent);
+}
+
+.post-entry:hover {
+  border-color: var(--rose-gold);
+  box-shadow: 0 2px 12px rgba(183, 110, 121, 0.25);
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
+}
+
+/* Buttons - elegant gold */
+.button,
+button,
+input[type="submit"] {
+  background: linear-gradient(135deg, var(--elegant-gold), var(--rose-gold));
+  border-color: var(--elegant-gold);
+  color: white;
+  font-weight: 600;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  background: linear-gradient(135deg, var(--amethyst), var(--deep-rose));
+  border-color: var(--amethyst);
+}
+
+/* Tags - amethyst and lavender */
+.post-tags a {
+  background-color: var(--amethyst);
+  color: var(--blush);
+  border: 1px solid var(--lavender-rose);
+}
+
+.post-tags a:hover {
+  background-color: var(--lavender-rose);
+  color: var(--primary);
+  border-color: var(--elegant-gold);
+}
+
+/* Highlights - champagne */
+mark,
+.highlight {
+  background-color: var(--champagne);
+  color: var(--primary);
+  border-left: 3px solid var(--rose-gold);
+}
+
+/* Top link - rose gold elegance */
+.top-link {
+  background: linear-gradient(135deg, var(--rose-gold), var(--amethyst));
+  color: white;
+}
+
+.top-link:hover {
+  background: linear-gradient(135deg, var(--elegant-gold), var(--rose-gold));
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+/* Code syntax highlighting - Anniversary themed */
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal {
+  color: var(--lavender-rose);
+}
+
+.dark .hljs-string,
+.dark .hljs-title,
+.dark .hljs-name {
+  color: var(--elegant-gold);
+}
+
+.dark .hljs-attribute,
+.dark .hljs-symbol {
+  color: var(--rose-gold);
+}
+
+.dark .hljs-function,
+.dark .hljs-class {
+  color: var(--amethyst);
+}
+
+.dark .hljs-number {
+  color: var(--champagne);
+}
+
+.dark .hljs-comment {
+  color: #8a7a8a;
+  font-style: italic;
+}
+
+/* Light mode syntax highlighting */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #6b3869;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name {
+  color: #b8942b;
+}
+
+.hljs-attribute,
+.hljs-symbol {
+  color: #8e4e6f;
+}
+
+.hljs-function,
+.hljs-class {
+  color: #6b4789;
+}
+
+.hljs-number {
+  color: #c9a06a;
+}
+
+.hljs-comment {
+  color: #8a7a8a;
+  font-style: italic;
+}
+
+/* Special anniversary elegance */
+.dark h1,
+.dark h2 {
+  color: var(--elegant-gold);
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+}
+
+.post-title {
+  color: var(--amethyst);
+}
+
+.dark .post-title {
+  color: var(--lavender-rose);
+}
+
+/* Anniversary ring decorations */
+h1::before,
+h2::before {
+  content: "💍 ";
+  color: var(--elegant-gold);
+}
+
+.dark h1::before,
+.dark h2::before {
+  content: "💍 ";
+  color: var(--elegant-gold);
+}

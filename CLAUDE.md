@@ -137,6 +137,15 @@ Posts are in `content/posts/` and support all Hugo markdown features including s
 The blog has multiple color schemes available in `assets/css/extended/`.
 
 **Automatic Seasonal Switching:** Themes automatically switch based on the calendar:
+- New Year theme activates Dec 27 - Jan 7
+- Anniversary theme activates February 4 only (💍)
+- Valentine's Day theme activates Feb 7 - Feb 15
+- Easter theme activates one week before/after Easter Sunday
+- Memorial Day theme activates May 19 - May 26
+- Birthday theme activates July 1 only (🎂)
+- Independence Day theme activates Jun 27 - Jul 11
+- Labor Day theme activates Aug 25 - Sep 8
+- Fall theme activates Sep 15 - Oct 23
 - Halloween theme activates Oct 24 - Nov 1
 - Thanksgiving theme activates Nov 15 - Nov 29
 - Christmas theme activates Dec 18 - Dec 26
@@ -148,9 +157,8 @@ The nightly build (12 AM EST) runs `scripts/auto-theme.sh` to check and switch t
 - Go to: Settings → Secrets and variables → Actions → Variables tab
 - Available variables:
   - `DEFAULT_THEME` - Theme to use outside holiday periods (default: `catppuccin-macchiato`)
-  - `HALLOWEEN_START` / `HALLOWEEN_END` - Override Halloween period (format: `YYYY-MM-DD`)
-  - `THANKSGIVING_START` / `THANKSGIVING_END` - Override Thanksgiving period
-  - `CHRISTMAS_START` / `CHRISTMAS_END` - Override Christmas period
+  - Each holiday has `_START` and `_END` variables to override periods (format: `YYYY-MM-DD`)
+  - Examples: `BIRTHDAY_START`, `BIRTHDAY_END`, `HALLOWEEN_START`, `HALLOWEEN_END`, etc.
 
 Example: To use Palette #17 as default, create variable `DEFAULT_THEME` with value `palette17`.
 
@@ -162,6 +170,11 @@ Example: To use Palette #17 as default, create variable `DEFAULT_THEME` with val
 - Best for: Year-round use, easy on the eyes
 
 ### Seasonal Themes
+
+**Anniversary**
+- Elegant celebration with roses, champagne, and gold
+- Colors: `#8b4789` (amethyst), `#d4af37` (gold), `#b76e79` (rose gold), `#c9a0dc` (lavender rose)
+- Best for: February 4th wedding anniversary 💍
 
 **Halloween**
 - Spooky oranges, purples, and blacks
@@ -177,6 +190,11 @@ Example: To use Palette #17 as default, create variable `DEFAULT_THEME` with val
 - Festive reds, greens, and golds
 - Colors: `#165b33` (evergreen), `#bb2528` (christmas red), `#f8b229` (gold)
 - Best for: December holiday season
+
+**Birthday**
+- Vibrant celebration with balloons and confetti
+- Colors: `#ff6b9d` (party pink), `#ffd93d` (balloon yellow), `#6bcf7f` (confetti green), `#4d9de0` (sky blue), `#bb9af7` (celebration purple)
+- Best for: July 1st birthday celebration 🎂
 
 ### Other Themes
 
@@ -201,6 +219,8 @@ mise run theme palette17
 mise run theme catppuccin-macchiato
 
 # Seasonal themes (or wait for automatic switching!)
+mise run theme anniversary
+mise run theme birthday
 mise run theme halloween
 mise run theme thanksgiving
 mise run theme christmas

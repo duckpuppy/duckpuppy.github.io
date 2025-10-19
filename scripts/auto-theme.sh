@@ -96,6 +96,11 @@ EASTER_END=$(date -d "$EASTER_DATE + $EASTER_OFFSET_AFTER days" +%Y-%m-%d)
 NEW_YEAR_START="${NEW_YEAR_START:-$(($YEAR-1))-12-27}"
 NEW_YEAR_END="${NEW_YEAR_END:-$YEAR-01-07}"
 
+# Anniversary: February 4
+# Active period: February 4 only (configurable via env vars)
+ANNIVERSARY_START="${ANNIVERSARY_START:-$YEAR-02-04}"
+ANNIVERSARY_END="${ANNIVERSARY_END:-$YEAR-02-05}"
+
 # Valentine's Day: February 14
 # Active period: Feb 7 - Feb 15 (configurable via env vars)
 VALENTINES_START="${VALENTINES_START:-$YEAR-02-07}"
@@ -105,6 +110,11 @@ VALENTINES_END="${VALENTINES_END:-$YEAR-02-15}"
 # Active period: Week before Memorial Day (configurable via env vars)
 MEMORIAL_DAY_START="${MEMORIAL_DAY_START:-$YEAR-05-19}"
 MEMORIAL_DAY_END="${MEMORIAL_DAY_END:-$YEAR-05-26}"
+
+# Birthday: July 1
+# Active period: July 1 only (configurable via env vars)
+BIRTHDAY_START="${BIRTHDAY_START:-$YEAR-07-01}"
+BIRTHDAY_END="${BIRTHDAY_END:-$YEAR-07-02}"
 
 # Independence Day: July 4
 # Active period: Week before through week after (configurable via env vars)
@@ -144,6 +154,9 @@ DESIRED_THEME="$DEFAULT_THEME"
 if [[ ("$DATE_STR" > "$NEW_YEAR_START" && "$MONTH" == "12") || ("$MONTH" == "1" && "$DATE_STR" < "$NEW_YEAR_END") ]]; then
     DESIRED_THEME="new-year"
     echo "New Year season detected ($NEW_YEAR_START to $NEW_YEAR_END)"
+elif [[ "$DATE_STR" > "$ANNIVERSARY_START" && "$DATE_STR" < "$ANNIVERSARY_END" ]]; then
+    DESIRED_THEME="anniversary"
+    echo "Anniversary detected! 💍 ($ANNIVERSARY_START)"
 elif [[ "$DATE_STR" > "$VALENTINES_START" && "$DATE_STR" < "$VALENTINES_END" ]]; then
     DESIRED_THEME="valentines"
     echo "Valentine's Day season detected ($VALENTINES_START to $VALENTINES_END)"
@@ -153,6 +166,9 @@ elif [[ "$DATE_STR" > "$EASTER_START" && "$DATE_STR" < "$EASTER_END" ]]; then
 elif [[ "$DATE_STR" > "$MEMORIAL_DAY_START" && "$DATE_STR" < "$MEMORIAL_DAY_END" ]]; then
     DESIRED_THEME="memorial-day"
     echo "Memorial Day season detected ($MEMORIAL_DAY_START to $MEMORIAL_DAY_END)"
+elif [[ "$DATE_STR" > "$BIRTHDAY_START" && "$DATE_STR" < "$BIRTHDAY_END" ]]; then
+    DESIRED_THEME="birthday"
+    echo "Birthday detected! 🎂 ($BIRTHDAY_START)"
 elif [[ "$DATE_STR" > "$INDEPENDENCE_DAY_START" && "$DATE_STR" < "$INDEPENDENCE_DAY_END" ]]; then
     DESIRED_THEME="independence-day"
     echo "Independence Day season detected ($INDEPENDENCE_DAY_START to $INDEPENDENCE_DAY_END)"
