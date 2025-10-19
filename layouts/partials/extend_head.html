@@ -1,4 +1,4 @@
-{{- if or (.Site.IsServer) (eq hugo.Environment "development") }}
+{{- if or (site.IsServer) (eq hugo.Environment "development") }}
 <!-- Theme Selector - Only in Development Mode -->
 <style>
   #theme-selector {
