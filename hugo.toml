@@ -1,6 +1,6 @@
 baseURL      = 'https://duckpuppy.com/'
 languageCode = 'en-us'
-title        = 'cat /proc/brain'
+title        = '# cat /proc/brain'
 
 [pagination]
   pagerSize = 10
