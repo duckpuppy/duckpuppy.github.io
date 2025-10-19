@@ -1,0 +1,191 @@
+/* Catppuccin Macchiato color scheme
+ * theme-id: catppuccin-macchiato
+ * Official palette: https://github.com/catppuccin/catppuccin
+ * Medium contrast with gentle colors creating a soothing atmosphere
+ */
+
+:root {
+  /* Light mode - using lighter Catppuccin colors for readability */
+  --theme: #eff1f5;
+  --entry: #e6e9ef;
+  --primary: #4c4f69;
+  --secondary: #6c6f85;
+  --tertiary: #ccd0da;
+  --content: #4c4f69;
+  --hljs-bg: #e6e9ef;
+  --code-bg: #dce0e8;
+  --border: #bcc0cc;
+
+  /* Catppuccin Macchiato accent colors */
+  --rosewater: #f4dbd6;
+  --flamingo: #f0c6c6;
+  --pink: #f5bde6;
+  --mauve: #c6a0f6;
+  --red: #ed8796;
+  --maroon: #ee99a0;
+  --peach: #f5a97f;
+  --yellow: #eed49f;
+  --green: #a6da95;
+  --teal: #8bd5ca;
+  --sky: #91d7e3;
+  --sapphire: #7dc4e4;
+  --blue: #8aadf4;
+  --lavender: #b7bdf8;
+}
+
+.dark {
+  /* Dark mode - Catppuccin Macchiato colors */
+  --theme: #24273a;
+  --entry: #1e2030;
+  --primary: #cad3f5;
+  --secondary: #a5adcb;
+  --tertiary: #363a4f;
+  --content: #cad3f5;
+  --hljs-bg: #1e2030;
+  --code-bg: #181926;
+  --border: #494d64;
+
+  /* Catppuccin Macchiato accent colors (same in dark mode) */
+  --rosewater: #f4dbd6;
+  --flamingo: #f0c6c6;
+  --pink: #f5bde6;
+  --mauve: #c6a0f6;
+  --red: #ed8796;
+  --maroon: #ee99a0;
+  --peach: #f5a97f;
+  --yellow: #eed49f;
+  --green: #a6da95;
+  --teal: #8bd5ca;
+  --sky: #91d7e3;
+  --sapphire: #7dc4e4;
+  --blue: #8aadf4;
+  --lavender: #b7bdf8;
+}
+
+/* Apply accent colors to links */
+a {
+  color: var(--blue);
+}
+
+a:hover {
+  color: var(--sapphire);
+}
+
+/* Use mauve for post entry borders on hover */
+.post-entry:hover {
+  border-color: var(--mauve);
+}
+
+/* Use blue for buttons and interactive elements */
+.button,
+button,
+input[type="submit"] {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--theme);
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--sapphire);
+  border-color: var(--sapphire);
+}
+
+/* Use green for tags */
+.post-tags a {
+  background-color: var(--green);
+  color: var(--theme);
+}
+
+.post-tags a:hover {
+  background-color: var(--teal);
+}
+
+/* Use yellow for highlighted content */
+mark,
+.highlight {
+  background-color: var(--yellow);
+  color: var(--primary);
+}
+
+/* Navigation and header accents */
+.top-link {
+  background-color: var(--mauve);
+}
+
+.top-link:hover {
+  background-color: var(--lavender);
+}
+
+/* Code syntax highlighting with Catppuccin colors */
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal {
+  color: var(--mauve);
+}
+
+.dark .hljs-string,
+.dark .hljs-title,
+.dark .hljs-name {
+  color: var(--green);
+}
+
+.dark .hljs-attribute,
+.dark .hljs-symbol {
+  color: var(--yellow);
+}
+
+.dark .hljs-function,
+.dark .hljs-class {
+  color: var(--blue);
+}
+
+.dark .hljs-number {
+  color: var(--peach);
+}
+
+.dark .hljs-comment {
+  color: var(--overlay1);
+  font-style: italic;
+}
+
+.dark .hljs-variable {
+  color: var(--text);
+}
+
+.dark .hljs-type {
+  color: var(--sky);
+}
+
+/* Light mode syntax highlighting */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #8839ef; /* Darker mauve for light mode */
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name {
+  color: #40a02b; /* Darker green for light mode */
+}
+
+.hljs-attribute,
+.hljs-symbol {
+  color: #df8e1d; /* Darker yellow for light mode */
+}
+
+.hljs-function,
+.hljs-class {
+  color: #1e66f5; /* Darker blue for light mode */
+}
+
+.hljs-number {
+  color: #fe640b; /* Darker peach for light mode */
+}
+
+.hljs-comment {
+  color: #9ca0b0;
+  font-style: italic;
+}

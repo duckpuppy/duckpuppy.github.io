@@ -19,3 +19,88 @@
   run = '''
 hugo new content posts/$(date +%Y-%m-%d)-$(echo "$@" | tr '[:upper:] ' '[:lower:]-').md
 '''
+
+[tasks.theme]
+  description = "Switch color theme (usage: mise run theme THEME_NAME)"
+  run = '''
+#!/usr/bin/env bash
+THEME_DIR="assets/css/extended"
+ACTIVE_FILE="$THEME_DIR/theme-colors.css"
+THEME_NAME="$1"
+
+if [ -z "$THEME_NAME" ]; then
+  echo "Available themes:"
+  for f in "$THEME_DIR"/*.css.backup; do
+    if [ -f "$f" ]; then
+      THEME=$(basename "$f" .css.backup)
+      DESC=$(head -n1 "$f" | sed 's|^/\* ||' | sed 's| color scheme$||')
+      echo "  - $THEME: $DESC"
+    fi
+  done
+  if [ -f "$ACTIVE_FILE" ]; then
+    echo ""
+    CURRENT_DESC=$(head -n1 "$ACTIVE_FILE" | sed 's|^/\* ||' | sed 's| color scheme$||')
+    echo "Current theme: $CURRENT_DESC"
+  fi
+  echo ""
+  echo "Usage: mise run theme -- THEME_NAME"
+  exit 0
+fi
+
+TARGET_FILE="$THEME_DIR/${THEME_NAME}.css.backup"
+
+if [ ! -f "$TARGET_FILE" ]; then
+  echo "Error: Theme '$THEME_NAME' not found at $TARGET_FILE"
+  echo ""
+  echo "Available themes:"
+  for f in "$THEME_DIR"/*.css.backup; do
+    if [ -f "$f" ]; then
+      echo "  - $(basename "$f" .css.backup)"
+    fi
+  done
+  exit 1
+fi
+
+# Backup current active theme if it exists
+if [ -f "$ACTIVE_FILE" ]; then
+  CURRENT_ID=$(grep "theme-id:" "$ACTIVE_FILE" | head -n1 | sed 's|.*theme-id: ||' | tr -d ' ')
+  if [ -n "$CURRENT_ID" ]; then
+    BACKUP_NAME="$THEME_DIR/${CURRENT_ID}.css.backup"
+    mv "$ACTIVE_FILE" "$BACKUP_NAME"
+    echo "Backed up current theme to: $(basename "$BACKUP_NAME")"
+  else
+    echo "Warning: Current theme has no theme-id, skipping backup"
+    rm "$ACTIVE_FILE"
+  fi
+fi
+
+# Activate new theme
+mv "$TARGET_FILE" "$ACTIVE_FILE"
+NEW_DESC=$(head -n1 "$ACTIVE_FILE" | sed 's|^/\* ||' | sed 's| color scheme$||')
+echo "Activated theme: $NEW_DESC"
+echo ""
+echo "Restart your Hugo server to see the changes:"
+echo "  mise run serve"
+'''
+
+[tasks.theme-list]
+  description = "List available color themes"
+  run = '''
+THEME_DIR="assets/css/extended"
+ACTIVE_FILE="$THEME_DIR/theme-colors.css"
+
+echo "Available themes:"
+for f in "$THEME_DIR"/*.css.backup; do
+  if [ -f "$f" ]; then
+    THEME=$(basename "$f" .css.backup)
+    DESC=$(head -n1 "$f" | sed 's|^/\* ||' | sed 's| color scheme$||')
+    echo "  - $THEME: $DESC"
+  fi
+done
+
+if [ -f "$ACTIVE_FILE" ]; then
+  echo ""
+  CURRENT_DESC=$(head -n1 "$ACTIVE_FILE" | sed 's|^/\* ||' | sed 's| color scheme$||')
+  echo "Current theme: $CURRENT_DESC"
+fi
+'''

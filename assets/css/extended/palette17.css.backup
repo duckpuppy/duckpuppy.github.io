@@ -1,0 +1,106 @@
+/* Custom color scheme using Palette #17 from Visme
+ * theme-id: palette17
+ * Colors: #272727, #747474, #FF652F, #FFE400, #14A76C
+ */
+
+:root {
+  /* Light mode colors */
+  --theme: #ffffff;
+  --entry: #f8f8f8;
+  --primary: #272727;
+  --secondary: #747474;
+  --tertiary: #e8e8e8;
+  --content: #272727;
+  --hljs-bg: #272727;
+  --code-bg: #f5f5f5;
+  --border: #e0e0e0;
+
+  /* Custom accent colors from palette */
+  --accent-orange: #FF652F;
+  --accent-yellow: #FFE400;
+  --accent-teal: #14A76C;
+}
+
+.dark {
+  /* Dark mode colors */
+  --theme: #272727;
+  --entry: #2f2f2f;
+  --primary: #e8e8e8;
+  --secondary: #b0b0b0;
+  --tertiary: #3a3a3a;
+  --content: #d0d0d0;
+  --hljs-bg: #1a1a1a;
+  --code-bg: #1f1f1f;
+  --border: #3a3a3a;
+
+  /* Custom accent colors from palette (same in dark mode) */
+  --accent-orange: #FF652F;
+  --accent-yellow: #FFE400;
+  --accent-teal: #14A76C;
+}
+
+/* Apply accent colors to links */
+a,
+a:hover {
+  color: var(--accent-orange);
+}
+
+/* Use teal for hover states */
+.post-entry:hover {
+  border-color: var(--accent-teal);
+}
+
+/* Use orange for buttons and interactive elements */
+.button,
+button,
+input[type="submit"] {
+  background-color: var(--accent-orange);
+  border-color: var(--accent-orange);
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  background-color: #e55528;
+  border-color: #e55528;
+}
+
+/* Use teal for tags */
+.post-tags a {
+  background-color: var(--accent-teal);
+  color: white;
+}
+
+.post-tags a:hover {
+  background-color: #118759;
+}
+
+/* Use yellow for highlighted code or special callouts */
+mark,
+.highlight-yellow {
+  background-color: var(--accent-yellow);
+  color: var(--primary);
+}
+
+/* Adjust code block syntax highlighting accent */
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-literal,
+.dark .hljs-section,
+.dark .hljs-link {
+  color: var(--accent-orange);
+}
+
+.dark .hljs-string,
+.dark .hljs-title,
+.dark .hljs-name,
+.dark .hljs-type {
+  color: var(--accent-teal);
+}
+
+.dark .hljs-attribute,
+.dark .hljs-symbol,
+.dark .hljs-bullet,
+.dark .hljs-addition {
+  color: var(--accent-yellow);
+}
