@@ -134,7 +134,25 @@ Posts are in `content/posts/` and support all Hugo markdown features including s
 
 ## Color Schemes
 
-The blog has multiple color schemes available in `assets/css/extended/`:
+The blog has multiple color schemes available in `assets/css/extended/`.
+
+**Automatic Seasonal Switching:** Themes automatically switch based on the calendar:
+- Halloween theme activates Oct 24 - Nov 1
+- Thanksgiving theme activates Nov 15 - Nov 29
+- Christmas theme activates Dec 18 - Dec 26
+- Default (Catppuccin Macchiato) used outside holiday periods
+
+The nightly build (12 AM EST) runs `scripts/auto-theme.sh` to check and switch themes automatically.
+
+**Configuring Automation:** Set GitHub Actions variables to customize behavior:
+- Go to: Settings → Secrets and variables → Actions → Variables tab
+- Available variables:
+  - `DEFAULT_THEME` - Theme to use outside holiday periods (default: `catppuccin-macchiato`)
+  - `HALLOWEEN_START` / `HALLOWEEN_END` - Override Halloween period (format: `YYYY-MM-DD`)
+  - `THANKSGIVING_START` / `THANKSGIVING_END` - Override Thanksgiving period
+  - `CHRISTMAS_START` / `CHRISTMAS_END` - Override Christmas period
+
+Example: To use Palette #17 as default, create variable `DEFAULT_THEME` with value `palette17`.
 
 ### Default: Catppuccin Macchiato
 - Official Catppuccin Macchiato palette
@@ -182,11 +200,13 @@ mise run theme
 mise run theme palette17
 mise run theme catppuccin-macchiato
 
-# Seasonal themes
+# Seasonal themes (or wait for automatic switching!)
 mise run theme halloween
 mise run theme thanksgiving
 mise run theme christmas
 ```
+
+**Note:** Seasonal themes switch automatically during their active periods. Manual switching overrides automation until the next nightly build.
 
 The active theme is always `theme-colors.css`. Inactive themes are stored as `*.css.backup` files.
 

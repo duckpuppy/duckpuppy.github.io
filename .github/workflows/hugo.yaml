@@ -51,6 +51,29 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Auto-switch seasonal theme
+        env:
+          DEFAULT_THEME: ${{ vars.DEFAULT_THEME || 'catppuccin-macchiato' }}
+          HALLOWEEN_START: ${{ vars.HALLOWEEN_START || '' }}
+          HALLOWEEN_END: ${{ vars.HALLOWEEN_END || '' }}
+          THANKSGIVING_START: ${{ vars.THANKSGIVING_START || '' }}
+          THANKSGIVING_END: ${{ vars.THANKSGIVING_END || '' }}
+          CHRISTMAS_START: ${{ vars.CHRISTMAS_START || '' }}
+          CHRISTMAS_END: ${{ vars.CHRISTMAS_END || '' }}
+        run: |
+          if ./scripts/auto-theme.sh; then
+            echo "Theme was changed, committing..."
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add assets/css/extended/
+            THEME_NAME=$(grep "theme-id:" assets/css/extended/theme-colors.css | head -n1 | sed 's|.*theme-id: ||' | tr -d ' ')
+            git commit -m "chore: auto-switch to $THEME_NAME theme for seasonal period"
+            git push
+          else
+            echo "No theme change needed"
+          fi
 
       - name: Setup Pages
         id: pages
