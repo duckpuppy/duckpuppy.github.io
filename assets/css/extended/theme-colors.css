@@ -1,187 +1,208 @@
-/* Thanksgiving color scheme
- * theme-id: thanksgiving
- * Warm autumn colors inspired by harvest season
- * Colors: #8b4513 (saddle brown), #d2691e (chocolate), #ff8c00 (dark orange), #daa520 (goldenrod), #8b0000 (dark red)
+/* Christmas color scheme
+ * theme-id: christmas
+ * Festive reds, greens, and golds for the holiday season
+ * Colors: #165b33 (evergreen), #bb2528 (christmas red), #146b3a (forest green), #f8b229 (gold), #ea4630 (bright red)
  */
 
 :root {
-  /* Light mode - warm harvest colors */
-  --theme: #fdf8f3;
-  --entry: #f5ebe0;
-  --primary: #4a2511;
-  --secondary: #6b3d1f;
-  --tertiary: #e8d5c4;
-  --content: #4a2511;
-  --hljs-bg: #f5ebe0;
-  --code-bg: #ede1d6;
-  --border: #c9a87c;
+  /* Light mode - bright Christmas colors */
+  --theme: #fffef9;
+  --entry: #f5f5f0;
+  --primary: #165b33;
+  --secondary: #2a7a4a;
+  --tertiary: #e8f5e9;
+  --content: #1a5c35;
+  --hljs-bg: #f5f5f0;
+  --code-bg: #ebe8e0;
+  --border: #c8e6c9;
 
-  /* Thanksgiving accent colors */
-  --saddle-brown: #8b4513;
-  --chocolate: #d2691e;
-  --dark-orange: #ff8c00;
-  --goldenrod: #daa520;
-  --dark-red: #8b0000;
-  --burnt-sienna: #e97451;
-  --wheat: #f5deb3;
+  /* Christmas accent colors */
+  --evergreen: #165b33;
+  --christmas-red: #bb2528;
+  --forest-green: #146b3a;
+  --gold: #f8b229;
+  --bright-red: #ea4630;
+  --snow-white: #fffafa;
+  --holly-berry: #c41e3a;
 }
 
 .dark {
-  /* Dark mode - cozy autumn evening */
-  --theme: #2a1810;
-  --entry: #3a2418;
-  --primary: #f5deb3;
-  --secondary: #d4a574;
-  --tertiary: #4a3020;
-  --content: #e8d5c4;
-  --hljs-bg: #1a0f08;
-  --code-bg: #2a1810;
-  --border: #8b4513;
+  /* Dark mode - cozy Christmas evening */
+  --theme: #0d1f14;
+  --entry: #1a2e20;
+  --primary: #f5f5dc;
+  --secondary: #d4d4bc;
+  --tertiary: #253a28;
+  --content: #e8e8d0;
+  --hljs-bg: #0a1810;
+  --code-bg: #152118;
+  --border: #2d5a3d;
 
-  /* Thanksgiving accent colors */
-  --saddle-brown: #a0632a;
-  --chocolate: #d2691e;
-  --dark-orange: #ff8c00;
-  --goldenrod: #daa520;
-  --dark-red: #b22222;
-  --burnt-sienna: #e97451;
-  --wheat: #f5deb3;
+  /* Christmas accent colors */
+  --evergreen: #1e7a45;
+  --christmas-red: #d62828;
+  --forest-green: #1a8f4f;
+  --gold: #ffd700;
+  --bright-red: #ff4545;
+  --snow-white: #fffafa;
+  --holly-berry: #e63946;
 }
 
-/* Links - warm goldenrod */
+/* Links - festive red */
 a {
-  color: var(--dark-orange);
+  color: var(--christmas-red);
 }
 
 a:hover {
-  color: var(--goldenrod);
+  color: var(--bright-red);
 }
 
-/* Post entries - harvest theme */
+/* Post entries - evergreen and gold accents */
 .post-entry {
-  border-left: 3px solid var(--saddle-brown);
+  border-left: 3px solid var(--evergreen);
 }
 
 .post-entry:hover {
-  border-color: var(--dark-orange);
-  background-color: rgba(218, 165, 32, 0.05);
+  border-color: var(--gold);
+  box-shadow: 0 2px 8px rgba(248, 178, 41, 0.2);
 }
 
-/* Buttons - rich autumn colors */
+/* Buttons - Christmas red */
 .button,
 button,
 input[type="submit"] {
-  background-color: var(--saddle-brown);
-  border-color: var(--saddle-brown);
-  color: var(--wheat);
+  background-color: var(--christmas-red);
+  border-color: var(--christmas-red);
+  color: white;
 }
 
 .button:hover,
 button:hover,
 input[type="submit"]:hover {
-  background-color: var(--chocolate);
-  border-color: var(--chocolate);
+  background-color: var(--bright-red);
+  border-color: var(--bright-red);
 }
 
-/* Tags - warm orange tones */
+/* Tags - forest green with gold on hover */
 .post-tags a {
-  background-color: var(--dark-orange);
-  color: var(--theme);
+  background-color: var(--forest-green);
+  color: white;
 }
 
 .post-tags a:hover {
-  background-color: var(--goldenrod);
+  background-color: var(--gold);
+  color: var(--evergreen);
 }
 
-/* Highlights - wheat color */
+/* Highlights - gold */
 mark,
 .highlight {
-  background-color: var(--wheat);
-  color: var(--primary);
+  background-color: var(--gold);
+  color: var(--evergreen);
 }
 
-/* Top link - burnt sienna */
+/* Top link - holly berry red */
 .top-link {
-  background-color: var(--burnt-sienna);
+  background-color: var(--holly-berry);
+  color: white;
 }
 
 .top-link:hover {
-  background-color: var(--dark-orange);
+  background-color: var(--gold);
+  color: var(--evergreen);
 }
 
-/* Code syntax highlighting - Thanksgiving themed */
+/* Code syntax highlighting - Christmas themed */
 .dark .hljs-keyword,
 .dark .hljs-selector-tag,
 .dark .hljs-literal {
-  color: var(--dark-red);
+  color: var(--bright-red);
 }
 
 .dark .hljs-string,
 .dark .hljs-title,
 .dark .hljs-name {
-  color: var(--goldenrod);
+  color: var(--forest-green);
 }
 
 .dark .hljs-attribute,
 .dark .hljs-symbol {
-  color: var(--burnt-sienna);
+  color: var(--gold);
 }
 
 .dark .hljs-function,
 .dark .hljs-class {
-  color: var(--dark-orange);
+  color: var(--evergreen);
 }
 
 .dark .hljs-number {
-  color: var(--chocolate);
+  color: var(--holly-berry);
 }
 
 .dark .hljs-comment {
-  color: #8a7a6a;
+  color: #6a7a6a;
   font-style: italic;
+}
+
+.dark .hljs-variable {
+  color: var(--snow-white);
 }
 
 /* Light mode syntax highlighting */
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #6b0000;
+  color: #9b1b1e;
 }
 
 .hljs-string,
 .hljs-title,
 .hljs-name {
-  color: #b8860b;
+  color: #0f5027;
 }
 
 .hljs-attribute,
 .hljs-symbol {
-  color: #c75d3c;
+  color: #c89622;
 }
 
 .hljs-function,
 .hljs-class {
-  color: #cc6600;
+  color: #104a2b;
 }
 
 .hljs-number {
-  color: #a0522d;
+  color: #a01822;
 }
 
 .hljs-comment {
-  color: #8b7355;
+  color: #5a6a5a;
   font-style: italic;
 }
 
-/* Thanksgiving turkey decorations */
+/* Special Christmas decorative elements */
+.dark h1,
+.dark h2 {
+  color: var(--gold);
+}
+
+.post-title {
+  color: var(--evergreen);
+}
+
+.dark .post-title {
+  color: var(--gold);
+}
+
+/* Christmas tree decorations */
 h1::before,
 h2::before {
-  content: "🦃 ";
-  color: var(--dark-orange);
+  content: "🎄 ";
+  color: var(--forest-green);
 }
 
 .dark h1::before,
 .dark h2::before {
-  content: "🦃 ";
-  color: var(--dark-orange);
+  content: "🎄 ";
+  color: var(--gold);
 }
