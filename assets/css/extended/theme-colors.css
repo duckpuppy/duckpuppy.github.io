@@ -1,208 +1,198 @@
-/* Christmas color scheme
- * theme-id: christmas
- * Festive reds, greens, and golds for the holiday season
- * Colors: #165b33 (evergreen), #bb2528 (christmas red), #146b3a (forest green), #f8b229 (gold), #ea4630 (bright red)
+/* New Year color scheme
+ * theme-id: new-year
+ * Fresh starts and celebration with gold, silver, and midnight blue
+ * Colors: #ffd700 (gold), #c0c0c0 (silver), #191970 (midnight blue), #f5f5dc (champagne), #ffffff (white)
  */
 
 :root {
-  /* Light mode - bright Christmas colors */
+  /* Light mode - champagne and gold celebration */
   --theme: #fffef9;
-  --entry: #f5f5f0;
-  --primary: #165b33;
-  --secondary: #2a7a4a;
-  --tertiary: #e8f5e9;
-  --content: #1a5c35;
-  --hljs-bg: #f5f5f0;
-  --code-bg: #ebe8e0;
-  --border: #c8e6c9;
+  --entry: #f5f5dc;
+  --primary: #191970;
+  --secondary: #4a4a70;
+  --tertiary: #e8e8f0;
+  --content: #191970;
+  --hljs-bg: #f5f5dc;
+  --code-bg: #f0f0e8;
+  --border: #d4af37;
 
-  /* Christmas accent colors */
-  --evergreen: #165b33;
-  --christmas-red: #bb2528;
-  --forest-green: #146b3a;
-  --gold: #f8b229;
-  --bright-red: #ea4630;
-  --snow-white: #fffafa;
-  --holly-berry: #c41e3a;
+  /* New Year accent colors */
+  --gold: #ffd700;
+  --silver: #c0c0c0;
+  --midnight-blue: #191970;
+  --champagne: #f5f5dc;
+  --rose-gold: #b76e79;
+  --sparkle: #ffffff;
 }
 
 .dark {
-  /* Dark mode - cozy Christmas evening */
-  --theme: #0d1f14;
-  --entry: #1a2e20;
+  /* Dark mode - elegant midnight celebration */
+  --theme: #0a0a1a;
+  --entry: #151525;
   --primary: #f5f5dc;
   --secondary: #d4d4bc;
-  --tertiary: #253a28;
+  --tertiary: #252535;
   --content: #e8e8d0;
-  --hljs-bg: #0a1810;
-  --code-bg: #152118;
-  --border: #2d5a3d;
+  --hljs-bg: #050510;
+  --code-bg: #0f0f1f;
+  --border: #d4af37;
 
-  /* Christmas accent colors */
-  --evergreen: #1e7a45;
-  --christmas-red: #d62828;
-  --forest-green: #1a8f4f;
+  /* New Year accent colors */
   --gold: #ffd700;
-  --bright-red: #ff4545;
-  --snow-white: #fffafa;
-  --holly-berry: #e63946;
+  --silver: #c0c0c0;
+  --midnight-blue: #4169e1;
+  --champagne: #f5f5dc;
+  --rose-gold: #b76e79;
+  --sparkle: #ffffff;
 }
 
-/* Links - festive red */
+/* Links - shimmering gold */
 a {
-  color: var(--christmas-red);
+  color: var(--gold);
 }
 
 a:hover {
-  color: var(--bright-red);
+  color: var(--silver);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
 }
 
-/* Post entries - evergreen and gold accents */
+/* Post entries - elegant borders */
 .post-entry {
-  border-left: 3px solid var(--evergreen);
+  border-left: 3px solid var(--gold);
 }
 
 .post-entry:hover {
-  border-color: var(--gold);
-  box-shadow: 0 2px 8px rgba(248, 178, 41, 0.2);
+  border-color: var(--silver);
+  box-shadow: 0 2px 12px rgba(192, 192, 192, 0.3);
 }
 
-/* Buttons - Christmas red */
+/* Buttons - gold celebration */
 .button,
 button,
 input[type="submit"] {
-  background-color: var(--christmas-red);
-  border-color: var(--christmas-red);
-  color: white;
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--midnight-blue);
+  font-weight: 600;
 }
 
 .button:hover,
 button:hover,
 input[type="submit"]:hover {
-  background-color: var(--bright-red);
-  border-color: var(--bright-red);
+  background-color: var(--silver);
+  border-color: var(--silver);
 }
 
-/* Tags - forest green with gold on hover */
+/* Tags - midnight blue with gold accent */
 .post-tags a {
-  background-color: var(--forest-green);
-  color: white;
+  background-color: var(--midnight-blue);
+  color: var(--champagne);
+  border: 1px solid var(--gold);
 }
 
 .post-tags a:hover {
   background-color: var(--gold);
-  color: var(--evergreen);
+  color: var(--midnight-blue);
 }
 
-/* Highlights - gold */
+/* Highlights - champagne */
 mark,
 .highlight {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--champagne);
+  color: var(--midnight-blue);
 }
 
-/* Top link - holly berry red */
+/* Top link - rose gold */
 .top-link {
-  background-color: var(--holly-berry);
+  background-color: var(--rose-gold);
   color: white;
 }
 
 .top-link:hover {
   background-color: var(--gold);
-  color: var(--evergreen);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
-/* Code syntax highlighting - Christmas themed */
+/* Code syntax highlighting - New Year themed */
 .dark .hljs-keyword,
 .dark .hljs-selector-tag,
 .dark .hljs-literal {
-  color: var(--bright-red);
+  color: var(--gold);
 }
 
 .dark .hljs-string,
 .dark .hljs-title,
 .dark .hljs-name {
-  color: var(--forest-green);
+  color: var(--silver);
 }
 
 .dark .hljs-attribute,
 .dark .hljs-symbol {
-  color: var(--gold);
+  color: var(--champagne);
 }
 
 .dark .hljs-function,
 .dark .hljs-class {
-  color: var(--evergreen);
+  color: var(--midnight-blue);
 }
 
 .dark .hljs-number {
-  color: var(--holly-berry);
+  color: var(--rose-gold);
 }
 
 .dark .hljs-comment {
-  color: #6a7a6a;
+  color: #6a6a7a;
   font-style: italic;
-}
-
-.dark .hljs-variable {
-  color: var(--snow-white);
 }
 
 /* Light mode syntax highlighting */
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #9b1b1e;
+  color: #b8860b;
 }
 
 .hljs-string,
 .hljs-title,
 .hljs-name {
-  color: #0f5027;
+  color: #708090;
 }
 
 .hljs-attribute,
 .hljs-symbol {
-  color: #c89622;
+  color: #8b7355;
 }
 
 .hljs-function,
 .hljs-class {
-  color: #104a2b;
+  color: #191970;
 }
 
 .hljs-number {
-  color: #a01822;
+  color: #8b6370;
 }
 
 .hljs-comment {
-  color: #5a6a5a;
+  color: #5a5a6a;
   font-style: italic;
 }
 
-/* Special Christmas decorative elements */
+/* Special sparkle effect on headings */
 .dark h1,
 .dark h2 {
   color: var(--gold);
+  text-shadow: 0 0 4px rgba(255, 215, 0, 0.2);
 }
 
-.post-title {
-  color: var(--evergreen);
-}
-
-.dark .post-title {
-  color: var(--gold);
-}
-
-/* Christmas tree decorations */
+/* New Year celebration decorations */
 h1::before,
 h2::before {
-  content: "🎄 ";
-  color: var(--forest-green);
+  content: "🎊 ";
+  color: var(--gold);
 }
 
 .dark h1::before,
 .dark h2::before {
-  content: "🎄 ";
+  content: "🎊 ";
   color: var(--gold);
 }
