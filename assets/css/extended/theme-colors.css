@@ -1,187 +1,208 @@
-/* Valentine's Day color scheme
- * theme-id: valentines
- * Romance and love with reds, pinks, and roses
- * Colors: #dc143c (crimson), #ff69b4 (hot pink), #ff1493 (deep pink), #8b0000 (dark red), #fff0f5 (lavender blush)
+/* Christmas color scheme
+ * theme-id: christmas
+ * Festive reds, greens, and golds for the holiday season
+ * Colors: #165b33 (evergreen), #bb2528 (christmas red), #146b3a (forest green), #f8b229 (gold), #ea4630 (bright red)
  */
 
 :root {
-  /* Light mode - soft romantic colors */
-  --theme: #fff5f8;
-  --entry: #ffe4e9;
-  --primary: #8b0000;
-  --secondary: #a52a2a;
-  --tertiary: #ffd4dc;
-  --content: #6b0000;
-  --hljs-bg: #ffe4e9;
-  --code-bg: #ffd9e2;
-  --border: #ffb6c1;
+  /* Light mode - bright Christmas colors */
+  --theme: #fffef9;
+  --entry: #f5f5f0;
+  --primary: #165b33;
+  --secondary: #2a7a4a;
+  --tertiary: #e8f5e9;
+  --content: #1a5c35;
+  --hljs-bg: #f5f5f0;
+  --code-bg: #ebe8e0;
+  --border: #c8e6c9;
 
-  /* Valentine's accent colors */
-  --crimson: #dc143c;
-  --hot-pink: #ff69b4;
-  --deep-pink: #ff1493;
-  --dark-red: #8b0000;
-  --rose: #ff007f;
-  --lavender-blush: #fff0f5;
+  /* Christmas accent colors */
+  --evergreen: #165b33;
+  --christmas-red: #bb2528;
+  --forest-green: #146b3a;
+  --gold: #f8b229;
+  --bright-red: #ea4630;
+  --snow-white: #fffafa;
+  --holly-berry: #c41e3a;
 }
 
 .dark {
-  /* Dark mode - deep romantic atmosphere */
-  --theme: #1a0a0d;
-  --entry: #2a1518;
-  --primary: #ffb6c1;
-  --secondary: #ff91a4;
-  --tertiary: #3a2025;
-  --content: #ffc0cb;
-  --hljs-bg: #0d0507;
-  --code-bg: #1a0f12;
-  --border: #8b0000;
+  /* Dark mode - cozy Christmas evening */
+  --theme: #0d1f14;
+  --entry: #1a2e20;
+  --primary: #f5f5dc;
+  --secondary: #d4d4bc;
+  --tertiary: #253a28;
+  --content: #e8e8d0;
+  --hljs-bg: #0a1810;
+  --code-bg: #152118;
+  --border: #2d5a3d;
 
-  /* Valentine's accent colors */
-  --crimson: #dc143c;
-  --hot-pink: #ff69b4;
-  --deep-pink: #ff1493;
-  --dark-red: #b22222;
-  --rose: #ff007f;
-  --lavender-blush: #fff0f5;
+  /* Christmas accent colors */
+  --evergreen: #1e7a45;
+  --christmas-red: #d62828;
+  --forest-green: #1a8f4f;
+  --gold: #ffd700;
+  --bright-red: #ff4545;
+  --snow-white: #fffafa;
+  --holly-berry: #e63946;
 }
 
-/* Links - vibrant pink */
+/* Links - festive red */
 a {
-  color: var(--deep-pink);
+  color: var(--christmas-red);
 }
 
 a:hover {
-  color: var(--crimson);
+  color: var(--bright-red);
 }
 
-/* Post entries - romantic borders */
+/* Post entries - evergreen and gold accents */
 .post-entry {
-  border-left: 3px solid var(--deep-pink);
+  border-left: 3px solid var(--evergreen);
 }
 
 .post-entry:hover {
-  border-color: var(--crimson);
-  box-shadow: 0 2px 12px rgba(220, 20, 60, 0.2);
+  border-color: var(--gold);
+  box-shadow: 0 2px 8px rgba(248, 178, 41, 0.2);
 }
 
-/* Buttons - bold pink */
+/* Buttons - Christmas red */
 .button,
 button,
 input[type="submit"] {
-  background-color: var(--deep-pink);
-  border-color: var(--deep-pink);
+  background-color: var(--christmas-red);
+  border-color: var(--christmas-red);
   color: white;
 }
 
 .button:hover,
 button:hover,
 input[type="submit"]:hover {
-  background-color: var(--crimson);
-  border-color: var(--crimson);
+  background-color: var(--bright-red);
+  border-color: var(--bright-red);
 }
 
-/* Tags - hot pink */
+/* Tags - forest green with gold on hover */
 .post-tags a {
-  background-color: var(--hot-pink);
+  background-color: var(--forest-green);
   color: white;
 }
 
 .post-tags a:hover {
-  background-color: var(--rose);
+  background-color: var(--gold);
+  color: var(--evergreen);
 }
 
-/* Highlights - lavender blush */
+/* Highlights - gold */
 mark,
 .highlight {
-  background-color: var(--lavender-blush);
-  color: var(--dark-red);
-  border-left: 3px solid var(--deep-pink);
+  background-color: var(--gold);
+  color: var(--evergreen);
 }
 
-/* Top link - crimson */
+/* Top link - holly berry red */
 .top-link {
-  background-color: var(--crimson);
+  background-color: var(--holly-berry);
   color: white;
 }
 
 .top-link:hover {
-  background-color: var(--deep-pink);
+  background-color: var(--gold);
+  color: var(--evergreen);
 }
 
-/* Code syntax highlighting - Valentine themed */
+/* Code syntax highlighting - Christmas themed */
 .dark .hljs-keyword,
 .dark .hljs-selector-tag,
 .dark .hljs-literal {
-  color: var(--crimson);
+  color: var(--bright-red);
 }
 
 .dark .hljs-string,
 .dark .hljs-title,
 .dark .hljs-name {
-  color: var(--hot-pink);
+  color: var(--forest-green);
 }
 
 .dark .hljs-attribute,
 .dark .hljs-symbol {
-  color: var(--deep-pink);
+  color: var(--gold);
 }
 
 .dark .hljs-function,
 .dark .hljs-class {
-  color: var(--rose);
+  color: var(--evergreen);
 }
 
 .dark .hljs-number {
-  color: var(--lavender-blush);
+  color: var(--holly-berry);
 }
 
 .dark .hljs-comment {
-  color: #7a5a5f;
+  color: #6a7a6a;
   font-style: italic;
+}
+
+.dark .hljs-variable {
+  color: var(--snow-white);
 }
 
 /* Light mode syntax highlighting */
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #b22222;
+  color: #9b1b1e;
 }
 
 .hljs-string,
 .hljs-title,
 .hljs-name {
-  color: #c71585;
+  color: #0f5027;
 }
 
 .hljs-attribute,
 .hljs-symbol {
-  color: #db7093;
+  color: #c89622;
 }
 
 .hljs-function,
 .hljs-class {
-  color: #8b0000;
+  color: #104a2b;
 }
 
 .hljs-number {
-  color: #cd5c5c;
+  color: #a01822;
 }
 
 .hljs-comment {
-  color: #a0606a;
+  color: #5a6a5a;
   font-style: italic;
 }
 
-/* Hearts effect on special elements */
+/* Special Christmas decorative elements */
+.dark h1,
+.dark h2 {
+  color: var(--gold);
+}
+
+.post-title {
+  color: var(--evergreen);
+}
+
+.dark .post-title {
+  color: var(--gold);
+}
+
+/* Christmas tree decorations */
 h1::before,
 h2::before {
-  content: "♥ ";
-  color: var(--deep-pink);
+  content: "🎄 ";
+  color: var(--forest-green);
 }
 
 .dark h1::before,
 .dark h2::before {
-  content: "♥ ";
-  color: var(--deep-pink);
+  content: "🎄 ";
+  color: var(--gold);
 }
