@@ -1,208 +1,202 @@
-/* Christmas color scheme
- * theme-id: christmas
- * Festive reds, greens, and golds for the holiday season
- * Colors: #165b33 (evergreen), #bb2528 (christmas red), #146b3a (forest green), #f8b229 (gold), #ea4630 (bright red)
+/* Easter color scheme
+ * theme-id: easter
+ * Joyful resurrection and spring renewal with soft pastels
+ * Colors: #ffb6d9 (pastel pink), #ffffb3 (pastel yellow), #b3ffb3 (pastel green), #e6d0ff (lavender), #ffffff (white)
  */
 
 :root {
-  /* Light mode - bright Christmas colors */
+  /* Light mode - soft spring pastels */
   --theme: #fffef9;
-  --entry: #f5f5f0;
-  --primary: #165b33;
-  --secondary: #2a7a4a;
-  --tertiary: #e8f5e9;
-  --content: #1a5c35;
-  --hljs-bg: #f5f5f0;
-  --code-bg: #ebe8e0;
-  --border: #c8e6c9;
+  --entry: #f9f7ff;
+  --primary: #4a3f5a;
+  --secondary: #6a5a7a;
+  --tertiary: #f0e8ff;
+  --content: #4a3f5a;
+  --hljs-bg: #f9f7ff;
+  --code-bg: #f0e8f8;
+  --border: #d4c4e8;
 
-  /* Christmas accent colors */
-  --evergreen: #165b33;
-  --christmas-red: #bb2528;
-  --forest-green: #146b3a;
-  --gold: #f8b229;
-  --bright-red: #ea4630;
-  --snow-white: #fffafa;
-  --holly-berry: #c41e3a;
+  /* Easter pastel colors */
+  --pastel-pink: #ffb6d9;
+  --pastel-yellow: #ffffb3;
+  --pastel-green: #b3ffb3;
+  --lavender: #e6d0ff;
+  --pastel-blue: #b3d9ff;
+  --spring-white: #ffffff;
+  --lilac: #c8a2c8;
 }
 
 .dark {
-  /* Dark mode - cozy Christmas evening */
-  --theme: #0d1f14;
-  --entry: #1a2e20;
-  --primary: #f5f5dc;
-  --secondary: #d4d4bc;
-  --tertiary: #253a28;
-  --content: #e8e8d0;
-  --hljs-bg: #0a1810;
-  --code-bg: #152118;
-  --border: #2d5a3d;
+  /* Dark mode - gentle evening pastels */
+  --theme: #1a1520;
+  --entry: #2a2030;
+  --primary: #e8d8f8;
+  --secondary: #c8b8d8;
+  --tertiary: #3a2f48;
+  --content: #d8c8e8;
+  --hljs-bg: #0f0a15;
+  --code-bg: #1a1520;
+  --border: #6a5a7a;
 
-  /* Christmas accent colors */
-  --evergreen: #1e7a45;
-  --christmas-red: #d62828;
-  --forest-green: #1a8f4f;
-  --gold: #ffd700;
-  --bright-red: #ff4545;
-  --snow-white: #fffafa;
-  --holly-berry: #e63946;
+  /* Easter pastel colors */
+  --pastel-pink: #ffb6d9;
+  --pastel-yellow: #ffffcc;
+  --pastel-green: #b3ffb3;
+  --lavender: #e6d0ff;
+  --pastel-blue: #b3d9ff;
+  --spring-white: #fafafa;
+  --lilac: #dda0dd;
 }
 
-/* Links - festive red */
+/* Links - soft lavender */
 a {
-  color: var(--christmas-red);
+  color: var(--lilac);
 }
 
 a:hover {
-  color: var(--bright-red);
+  color: var(--pastel-pink);
 }
 
-/* Post entries - evergreen and gold accents */
+/* Post entries - spring borders */
 .post-entry {
-  border-left: 3px solid var(--evergreen);
+  border-left: 3px solid var(--lavender);
 }
 
 .post-entry:hover {
-  border-color: var(--gold);
-  box-shadow: 0 2px 8px rgba(248, 178, 41, 0.2);
+  border-color: var(--pastel-pink);
+  box-shadow: 0 2px 12px rgba(230, 208, 255, 0.3);
 }
 
-/* Buttons - Christmas red */
+/* Buttons - pastel pink */
 .button,
 button,
 input[type="submit"] {
-  background-color: var(--christmas-red);
-  border-color: var(--christmas-red);
-  color: white;
+  background-color: var(--pastel-pink);
+  border-color: var(--pastel-pink);
+  color: var(--primary);
 }
 
 .button:hover,
 button:hover,
 input[type="submit"]:hover {
-  background-color: var(--bright-red);
-  border-color: var(--bright-red);
+  background-color: var(--lavender);
+  border-color: var(--lavender);
 }
 
-/* Tags - forest green with gold on hover */
+/* Tags - mix of spring colors */
 .post-tags a {
-  background-color: var(--forest-green);
-  color: white;
+  background-color: var(--pastel-green);
+  color: var(--primary);
 }
 
 .post-tags a:hover {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--pastel-yellow);
 }
 
-/* Highlights - gold */
+/* Highlights - soft yellow */
 mark,
 .highlight {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--pastel-yellow);
+  color: var(--primary);
 }
 
-/* Top link - holly berry red */
+/* Top link - pastel blue */
 .top-link {
-  background-color: var(--holly-berry);
-  color: white;
+  background-color: var(--pastel-blue);
+  color: var(--primary);
 }
 
 .top-link:hover {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--lavender);
 }
 
-/* Code syntax highlighting - Christmas themed */
+/* Code syntax highlighting - Easter themed */
 .dark .hljs-keyword,
 .dark .hljs-selector-tag,
 .dark .hljs-literal {
-  color: var(--bright-red);
+  color: var(--pastel-pink);
 }
 
 .dark .hljs-string,
 .dark .hljs-title,
 .dark .hljs-name {
-  color: var(--forest-green);
+  color: var(--pastel-green);
 }
 
 .dark .hljs-attribute,
 .dark .hljs-symbol {
-  color: var(--gold);
+  color: var(--pastel-yellow);
 }
 
 .dark .hljs-function,
 .dark .hljs-class {
-  color: var(--evergreen);
+  color: var(--lavender);
 }
 
 .dark .hljs-number {
-  color: var(--holly-berry);
+  color: var(--pastel-blue);
 }
 
 .dark .hljs-comment {
-  color: #6a7a6a;
+  color: #8a7a9a;
   font-style: italic;
-}
-
-.dark .hljs-variable {
-  color: var(--snow-white);
 }
 
 /* Light mode syntax highlighting */
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #9b1b1e;
+  color: #9370db;
 }
 
 .hljs-string,
 .hljs-title,
 .hljs-name {
-  color: #0f5027;
+  color: #3cb371;
 }
 
 .hljs-attribute,
 .hljs-symbol {
-  color: #c89622;
+  color: #daa520;
 }
 
 .hljs-function,
 .hljs-class {
-  color: #104a2b;
+  color: #8a5aa0;
 }
 
 .hljs-number {
-  color: #a01822;
+  color: #6495ed;
 }
 
 .hljs-comment {
-  color: #5a6a5a;
+  color: #9a8aaa;
   font-style: italic;
 }
 
-/* Special Christmas decorative elements */
+/* Spring renewal effect */
 .dark h1,
 .dark h2 {
-  color: var(--gold);
+  color: var(--lavender);
 }
 
 .post-title {
-  color: var(--evergreen);
+  color: var(--lilac);
 }
 
 .dark .post-title {
-  color: var(--gold);
+  color: var(--pastel-pink);
 }
 
-/* Christmas tree decorations */
+/* Easter bunny decorations */
 h1::before,
 h2::before {
-  content: "🎄 ";
-  color: var(--forest-green);
+  content: "🐰 ";
+  color: var(--pastel-pink);
 }
 
 .dark h1::before,
 .dark h2::before {
-  content: "🎄 ";
-  color: var(--gold);
+  content: "🐰 ";
+  color: var(--pastel-pink);
 }
