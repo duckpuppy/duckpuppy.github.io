@@ -1,208 +1,194 @@
-/* Christmas color scheme
- * theme-id: christmas
- * Festive reds, greens, and golds for the holiday season
- * Colors: #165b33 (evergreen), #bb2528 (christmas red), #146b3a (forest green), #f8b229 (gold), #ea4630 (bright red)
+/* Independence Day color scheme
+ * theme-id: independence-day
+ * Bold patriotic celebration with vibrant red, white, and blue
+ * Colors: #ff0000 (bright red), #0000ff (bright blue), #ffffff (white), #1e3a8a (navy), #dc2626 (crimson)
  */
 
 :root {
-  /* Light mode - bright Christmas colors */
-  --theme: #fffef9;
-  --entry: #f5f5f0;
-  --primary: #165b33;
-  --secondary: #2a7a4a;
-  --tertiary: #e8f5e9;
-  --content: #1a5c35;
-  --hljs-bg: #f5f5f0;
-  --code-bg: #ebe8e0;
-  --border: #c8e6c9;
+  /* Light mode - vibrant patriotic celebration */
+  --theme: #ffffff;
+  --entry: #f0f4ff;
+  --primary: #1e3a8a;
+  --secondary: #3b5998;
+  --tertiary: #dbeafe;
+  --content: #1e3a8a;
+  --hljs-bg: #f0f4ff;
+  --code-bg: #e0e8ff;
+  --border: #93c5fd;
 
-  /* Christmas accent colors */
-  --evergreen: #165b33;
-  --christmas-red: #bb2528;
-  --forest-green: #146b3a;
-  --gold: #f8b229;
-  --bright-red: #ea4630;
-  --snow-white: #fffafa;
-  --holly-berry: #c41e3a;
+  /* Independence Day colors */
+  --freedom-red: #dc2626;
+  --liberty-blue: #2563eb;
+  --star-white: #ffffff;
+  --navy: #1e3a8a;
+  --firework-red: #ef4444;
+  --sky-blue: #60a5fa;
 }
 
 .dark {
-  /* Dark mode - cozy Christmas evening */
-  --theme: #0d1f14;
-  --entry: #1a2e20;
-  --primary: #f5f5dc;
-  --secondary: #d4d4bc;
-  --tertiary: #253a28;
-  --content: #e8e8d0;
-  --hljs-bg: #0a1810;
-  --code-bg: #152118;
-  --border: #2d5a3d;
+  /* Dark mode - fireworks in the night sky */
+  --theme: #0a0f1e;
+  --entry: #151a2e;
+  --primary: #f0f4ff;
+  --secondary: #c0c4df;
+  --tertiary: #252a3e;
+  --content: #e0e4f8;
+  --hljs-bg: #050a18;
+  --code-bg: #0f1428;
+  --border: #3b5998;
 
-  /* Christmas accent colors */
-  --evergreen: #1e7a45;
-  --christmas-red: #d62828;
-  --forest-green: #1a8f4f;
-  --gold: #ffd700;
-  --bright-red: #ff4545;
-  --snow-white: #fffafa;
-  --holly-berry: #e63946;
+  /* Independence Day colors */
+  --freedom-red: #ef4444;
+  --liberty-blue: #3b82f6;
+  --star-white: #ffffff;
+  --navy: #2563eb;
+  --firework-red: #f87171;
+  --sky-blue: #60a5fa;
 }
 
-/* Links - festive red */
+/* Links - liberty blue */
 a {
-  color: var(--christmas-red);
+  color: var(--liberty-blue);
 }
 
 a:hover {
-  color: var(--bright-red);
+  color: var(--freedom-red);
+  text-decoration: underline;
+  text-decoration-color: var(--freedom-red);
 }
 
-/* Post entries - evergreen and gold accents */
+/* Post entries - stars and stripes theme */
 .post-entry {
-  border-left: 3px solid var(--evergreen);
+  border-left: 5px solid var(--freedom-red);
+  border-right: 1px solid var(--liberty-blue);
 }
 
 .post-entry:hover {
-  border-color: var(--gold);
-  box-shadow: 0 2px 8px rgba(248, 178, 41, 0.2);
+  border-left-color: var(--liberty-blue);
+  border-right-color: var(--freedom-red);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
-/* Buttons - Christmas red */
+/* Buttons - freedom red */
 .button,
 button,
 input[type="submit"] {
-  background-color: var(--christmas-red);
-  border-color: var(--christmas-red);
+  background-color: var(--freedom-red);
+  border-color: var(--freedom-red);
   color: white;
+  font-weight: 700;
 }
 
 .button:hover,
 button:hover,
 input[type="submit"]:hover {
-  background-color: var(--bright-red);
-  border-color: var(--bright-red);
+  background-color: var(--liberty-blue);
+  border-color: var(--liberty-blue);
 }
 
-/* Tags - forest green with gold on hover */
+/* Tags - alternating red and blue */
 .post-tags a {
-  background-color: var(--forest-green);
+  background-color: var(--liberty-blue);
   color: white;
+  border: 2px solid var(--freedom-red);
 }
 
 .post-tags a:hover {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--freedom-red);
+  border-color: var(--liberty-blue);
 }
 
-/* Highlights - gold */
+/* Highlights - star white with red accent */
 mark,
 .highlight {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--star-white);
+  color: var(--navy);
+  border-left: 4px solid var(--freedom-red);
+  border-right: 4px solid var(--liberty-blue);
 }
 
-/* Top link - holly berry red */
+/* Top link - firework effect */
 .top-link {
-  background-color: var(--holly-berry);
+  background-color: var(--firework-red);
   color: white;
 }
 
 .top-link:hover {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--sky-blue);
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.6);
 }
 
-/* Code syntax highlighting - Christmas themed */
+/* Code syntax highlighting - patriotic */
 .dark .hljs-keyword,
 .dark .hljs-selector-tag,
 .dark .hljs-literal {
-  color: var(--bright-red);
+  color: var(--freedom-red);
+  font-weight: 600;
 }
 
 .dark .hljs-string,
 .dark .hljs-title,
 .dark .hljs-name {
-  color: var(--forest-green);
+  color: var(--sky-blue);
 }
 
 .dark .hljs-attribute,
 .dark .hljs-symbol {
-  color: var(--gold);
+  color: var(--star-white);
 }
 
 .dark .hljs-function,
 .dark .hljs-class {
-  color: var(--evergreen);
+  color: var(--liberty-blue);
 }
 
 .dark .hljs-number {
-  color: var(--holly-berry);
+  color: var(--firework-red);
 }
 
 .dark .hljs-comment {
-  color: #6a7a6a;
+  color: #6a7a9a;
   font-style: italic;
-}
-
-.dark .hljs-variable {
-  color: var(--snow-white);
 }
 
 /* Light mode syntax highlighting */
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #9b1b1e;
+  color: #991b1b;
+  font-weight: 600;
 }
 
 .hljs-string,
 .hljs-title,
 .hljs-name {
-  color: #0f5027;
+  color: #1e40af;
 }
 
 .hljs-attribute,
 .hljs-symbol {
-  color: #c89622;
+  color: #374151;
 }
 
 .hljs-function,
 .hljs-class {
-  color: #104a2b;
+  color: #1e3a8a;
 }
 
 .hljs-number {
-  color: #a01822;
+  color: #b91c1c;
 }
 
 .hljs-comment {
-  color: #5a6a5a;
+  color: #6b7280;
   font-style: italic;
 }
 
-/* Special Christmas decorative elements */
+/* Firework sparkle effect on headings */
 .dark h1,
 .dark h2 {
-  color: var(--gold);
-}
-
-.post-title {
-  color: var(--evergreen);
-}
-
-.dark .post-title {
-  color: var(--gold);
-}
-
-/* Christmas tree decorations */
-h1::before,
-h2::before {
-  content: "🎄 ";
-  color: var(--forest-green);
-}
-
-.dark h1::before,
-.dark h2::before {
-  content: "🎄 ";
-  color: var(--gold);
+  color: var(--star-white);
+  text-shadow:
+    0 0 10px rgba(239, 68, 68, 0.4),
+    0 0 20px rgba(59, 130, 246, 0.3);
 }
