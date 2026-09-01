@@ -1,208 +1,185 @@
-/* Christmas color scheme
- * theme-id: christmas
- * Festive reds, greens, and golds for the holiday season
- * Colors: #165b33 (evergreen), #bb2528 (christmas red), #146b3a (forest green), #f8b229 (gold), #ea4630 (bright red)
+/* Labor Day color scheme
+ * theme-id: labor-day
+ * Working class appreciation with navy, tan, and patriotic accents
+ * Colors: #1e3a8a (navy blue), #d4a574 (tan), #b22234 (red), #ffffff (white), #4a4a4a (charcoal)
  */
 
 :root {
-  /* Light mode - bright Christmas colors */
-  --theme: #fffef9;
-  --entry: #f5f5f0;
-  --primary: #165b33;
-  --secondary: #2a7a4a;
-  --tertiary: #e8f5e9;
-  --content: #1a5c35;
-  --hljs-bg: #f5f5f0;
-  --code-bg: #ebe8e0;
-  --border: #c8e6c9;
+  /* Light mode - honest work tones */
+  --theme: #fafaf8;
+  --entry: #f0ede8;
+  --primary: #2a2a2a;
+  --secondary: #4a4a4a;
+  --tertiary: #e8e4dc;
+  --content: #2a2a2a;
+  --hljs-bg: #f0ede8;
+  --code-bg: #e8e4dc;
+  --border: #c4b8a0;
 
-  /* Christmas accent colors */
-  --evergreen: #165b33;
-  --christmas-red: #bb2528;
-  --forest-green: #146b3a;
-  --gold: #f8b229;
-  --bright-red: #ea4630;
-  --snow-white: #fffafa;
-  --holly-berry: #c41e3a;
+  /* Labor Day colors */
+  --worker-navy: #1e3a8a;
+  --honest-tan: #d4a574;
+  --pride-red: #b22234;
+  --workwear-blue: #2563eb;
+  --steel-gray: #6b7280;
 }
 
 .dark {
-  /* Dark mode - cozy Christmas evening */
-  --theme: #0d1f14;
-  --entry: #1a2e20;
-  --primary: #f5f5dc;
-  --secondary: #d4d4bc;
-  --tertiary: #253a28;
-  --content: #e8e8d0;
-  --hljs-bg: #0a1810;
-  --code-bg: #152118;
-  --border: #2d5a3d;
+  /* Dark mode - evening after hard work */
+  --theme: #1a1810;
+  --entry: #2a2418;
+  --primary: #e8e4dc;
+  --secondary: #c8c4bc;
+  --tertiary: #3a3428;
+  --content: #d8d4cc;
+  --hljs-bg: #0f0d08;
+  --code-bg: #1a1810;
+  --border: #4a4438;
 
-  /* Christmas accent colors */
-  --evergreen: #1e7a45;
-  --christmas-red: #d62828;
-  --forest-green: #1a8f4f;
-  --gold: #ffd700;
-  --bright-red: #ff4545;
-  --snow-white: #fffafa;
-  --holly-berry: #e63946;
+  /* Labor Day colors */
+  --worker-navy: #3b82f6;
+  --honest-tan: #d4a574;
+  --pride-red: #dc2626;
+  --workwear-blue: #60a5fa;
+  --steel-gray: #9ca3af;
 }
 
-/* Links - festive red */
+/* Links - worker navy */
 a {
-  color: var(--christmas-red);
+  color: var(--worker-navy);
 }
 
 a:hover {
-  color: var(--bright-red);
+  color: var(--pride-red);
 }
 
-/* Post entries - evergreen and gold accents */
+/* Post entries - workwear inspired */
 .post-entry {
-  border-left: 3px solid var(--evergreen);
+  border-left: 4px solid var(--worker-navy);
 }
 
 .post-entry:hover {
-  border-color: var(--gold);
-  box-shadow: 0 2px 8px rgba(248, 178, 41, 0.2);
+  border-color: var(--honest-tan);
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.2);
 }
 
-/* Buttons - Christmas red */
+/* Buttons - pride red */
 .button,
 button,
 input[type="submit"] {
-  background-color: var(--christmas-red);
-  border-color: var(--christmas-red);
+  background-color: var(--pride-red);
+  border-color: var(--pride-red);
   color: white;
+  font-weight: 600;
 }
 
 .button:hover,
 button:hover,
 input[type="submit"]:hover {
-  background-color: var(--bright-red);
-  border-color: var(--bright-red);
+  background-color: var(--worker-navy);
+  border-color: var(--worker-navy);
 }
 
-/* Tags - forest green with gold on hover */
+/* Tags - steel gray */
 .post-tags a {
-  background-color: var(--forest-green);
+  background-color: var(--steel-gray);
   color: white;
 }
 
 .post-tags a:hover {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--worker-navy);
 }
 
-/* Highlights - gold */
+/* Highlights - honest tan */
 mark,
 .highlight {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--honest-tan);
+  color: var(--primary);
 }
 
-/* Top link - holly berry red */
+/* Top link - workwear blue */
 .top-link {
-  background-color: var(--holly-berry);
+  background-color: var(--workwear-blue);
   color: white;
 }
 
 .top-link:hover {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--worker-navy);
 }
 
-/* Code syntax highlighting - Christmas themed */
+/* Code syntax highlighting - Labor themed */
 .dark .hljs-keyword,
 .dark .hljs-selector-tag,
 .dark .hljs-literal {
-  color: var(--bright-red);
+  color: var(--pride-red);
 }
 
 .dark .hljs-string,
 .dark .hljs-title,
 .dark .hljs-name {
-  color: var(--forest-green);
+  color: var(--workwear-blue);
 }
 
 .dark .hljs-attribute,
 .dark .hljs-symbol {
-  color: var(--gold);
+  color: var(--honest-tan);
 }
 
 .dark .hljs-function,
 .dark .hljs-class {
-  color: var(--evergreen);
+  color: var(--worker-navy);
 }
 
 .dark .hljs-number {
-  color: var(--holly-berry);
+  color: var(--steel-gray);
 }
 
 .dark .hljs-comment {
-  color: #6a7a6a;
+  color: #7a7268;
   font-style: italic;
-}
-
-.dark .hljs-variable {
-  color: var(--snow-white);
 }
 
 /* Light mode syntax highlighting */
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #9b1b1e;
+  color: #8b1a2a;
 }
 
 .hljs-string,
 .hljs-title,
 .hljs-name {
-  color: #0f5027;
+  color: #1e40af;
 }
 
 .hljs-attribute,
 .hljs-symbol {
-  color: #c89622;
+  color: #a67c52;
 }
 
 .hljs-function,
 .hljs-class {
-  color: #104a2b;
+  color: #1e3a8a;
 }
 
 .hljs-number {
-  color: #a01822;
+  color: #4b5563;
 }
 
 .hljs-comment {
-  color: #5a6a5a;
+  color: #6b7280;
   font-style: italic;
 }
 
-/* Special Christmas decorative elements */
-.dark h1,
-.dark h2 {
-  color: var(--gold);
-}
-
-.post-title {
-  color: var(--evergreen);
-}
-
-.dark .post-title {
-  color: var(--gold);
-}
-
-/* Christmas tree decorations */
+/* Worker appreciation decorations */
 h1::before,
 h2::before {
-  content: "🎄 ";
-  color: var(--forest-green);
+  content: "👷 ";
+  color: var(--worker-navy);
 }
 
 .dark h1::before,
 .dark h2::before {
-  content: "🎄 ";
-  color: var(--gold);
+  content: "👷 ";
+  color: var(--honest-tan);
 }
