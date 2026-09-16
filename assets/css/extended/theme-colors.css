@@ -1,208 +1,203 @@
-/* Christmas color scheme
- * theme-id: christmas
- * Festive reds, greens, and golds for the holiday season
- * Colors: #165b33 (evergreen), #bb2528 (christmas red), #146b3a (forest green), #f8b229 (gold), #ea4630 (bright red)
+/* Fall/Autumn color scheme
+ * theme-id: fall
+ * Cozy autumn vibes with falling leaves and harvest tones
+ * Colors: #d2691e (chocolate), #ff8c00 (dark orange), #8b4513 (saddle brown), #daa520 (goldenrod), #8b0000 (dark red)
  */
 
 :root {
-  /* Light mode - bright Christmas colors */
-  --theme: #fffef9;
-  --entry: #f5f5f0;
-  --primary: #165b33;
-  --secondary: #2a7a4a;
-  --tertiary: #e8f5e9;
-  --content: #1a5c35;
-  --hljs-bg: #f5f5f0;
-  --code-bg: #ebe8e0;
-  --border: #c8e6c9;
+  /* Light mode - crisp autumn day */
+  --theme: #fdf8f3;
+  --entry: #f5ebe0;
+  --primary: #4a2511;
+  --secondary: #6b3d1f;
+  --tertiary: #e8d5c4;
+  --content: #4a2511;
+  --hljs-bg: #f5ebe0;
+  --code-bg: #ede1d6;
+  --border: #c9a87c;
 
-  /* Christmas accent colors */
-  --evergreen: #165b33;
-  --christmas-red: #bb2528;
-  --forest-green: #146b3a;
-  --gold: #f8b229;
-  --bright-red: #ea4630;
-  --snow-white: #fffafa;
-  --holly-berry: #c41e3a;
+  /* Fall colors */
+  --burnt-orange: #cc5500;
+  --deep-red: #8b0000;
+  --golden-yellow: #daa520;
+  --ochre: #cc7722;
+  --russet: #80461b;
+  --amber: #ffbf00;
 }
 
 .dark {
-  /* Dark mode - cozy Christmas evening */
-  --theme: #0d1f14;
-  --entry: #1a2e20;
-  --primary: #f5f5dc;
-  --secondary: #d4d4bc;
-  --tertiary: #253a28;
-  --content: #e8e8d0;
-  --hljs-bg: #0a1810;
-  --code-bg: #152118;
-  --border: #2d5a3d;
+  /* Dark mode - cozy autumn evening */
+  --theme: #2a1810;
+  --entry: #3a2418;
+  --primary: #f5deb3;
+  --secondary: #d4a574;
+  --tertiary: #4a3020;
+  --content: #e8d5c4;
+  --hljs-bg: #1a0f08;
+  --code-bg: #2a1810;
+  --border: #8b4513;
 
-  /* Christmas accent colors */
-  --evergreen: #1e7a45;
-  --christmas-red: #d62828;
-  --forest-green: #1a8f4f;
-  --gold: #ffd700;
-  --bright-red: #ff4545;
-  --snow-white: #fffafa;
-  --holly-berry: #e63946;
+  /* Fall colors */
+  --burnt-orange: #ff8c00;
+  --deep-red: #cd5c5c;
+  --golden-yellow: #ffd700;
+  --ochre: #dd8833;
+  --russet: #a0632a;
+  --amber: #ffcc00;
 }
 
-/* Links - festive red */
+/* Links - burnt orange */
 a {
-  color: var(--christmas-red);
+  color: var(--burnt-orange);
 }
 
 a:hover {
-  color: var(--bright-red);
+  color: var(--golden-yellow);
 }
 
-/* Post entries - evergreen and gold accents */
+/* Post entries - autumn leaves */
 .post-entry {
-  border-left: 3px solid var(--evergreen);
+  border-left: 4px solid var(--burnt-orange);
+  background: linear-gradient(to right, transparent, rgba(204, 85, 0, 0.02));
 }
 
 .post-entry:hover {
-  border-color: var(--gold);
-  box-shadow: 0 2px 8px rgba(248, 178, 41, 0.2);
+  border-color: var(--deep-red);
+  box-shadow: 0 2px 8px rgba(139, 0, 0, 0.15);
 }
 
-/* Buttons - Christmas red */
+/* Buttons - deep red */
 .button,
 button,
 input[type="submit"] {
-  background-color: var(--christmas-red);
-  border-color: var(--christmas-red);
-  color: white;
+  background-color: var(--deep-red);
+  border-color: var(--deep-red);
+  color: #f5deb3;
 }
 
 .button:hover,
 button:hover,
 input[type="submit"]:hover {
-  background-color: var(--bright-red);
-  border-color: var(--bright-red);
+  background-color: var(--burnt-orange);
+  border-color: var(--burnt-orange);
 }
 
-/* Tags - forest green with gold on hover */
+/* Tags - golden yellow and ochre */
 .post-tags a {
-  background-color: var(--forest-green);
-  color: white;
+  background-color: var(--golden-yellow);
+  color: var(--russet);
+  border: 1px solid var(--ochre);
 }
 
 .post-tags a:hover {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--amber);
+  border-color: var(--burnt-orange);
 }
 
-/* Highlights - gold */
+/* Highlights - amber */
 mark,
 .highlight {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--amber);
+  color: var(--russet);
 }
 
-/* Top link - holly berry red */
+/* Top link - ochre */
 .top-link {
-  background-color: var(--holly-berry);
+  background-color: var(--ochre);
   color: white;
 }
 
 .top-link:hover {
-  background-color: var(--gold);
-  color: var(--evergreen);
+  background-color: var(--burnt-orange);
 }
 
-/* Code syntax highlighting - Christmas themed */
+/* Code syntax highlighting - Fall themed */
 .dark .hljs-keyword,
 .dark .hljs-selector-tag,
 .dark .hljs-literal {
-  color: var(--bright-red);
+  color: var(--deep-red);
 }
 
 .dark .hljs-string,
 .dark .hljs-title,
 .dark .hljs-name {
-  color: var(--forest-green);
+  color: var(--golden-yellow);
 }
 
 .dark .hljs-attribute,
 .dark .hljs-symbol {
-  color: var(--gold);
+  color: var(--ochre);
 }
 
 .dark .hljs-function,
 .dark .hljs-class {
-  color: var(--evergreen);
+  color: var(--burnt-orange);
 }
 
 .dark .hljs-number {
-  color: var(--holly-berry);
+  color: var(--amber);
 }
 
 .dark .hljs-comment {
-  color: #6a7a6a;
+  color: #8a7a6a;
   font-style: italic;
-}
-
-.dark .hljs-variable {
-  color: var(--snow-white);
 }
 
 /* Light mode syntax highlighting */
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #9b1b1e;
+  color: #6b0000;
 }
 
 .hljs-string,
 .hljs-title,
 .hljs-name {
-  color: #0f5027;
+  color: #b8860b;
 }
 
 .hljs-attribute,
 .hljs-symbol {
-  color: #c89622;
+  color: #a0632a;
 }
 
 .hljs-function,
 .hljs-class {
-  color: #104a2b;
+  color: #8b4513;
 }
 
 .hljs-number {
-  color: #a01822;
+  color: #cc8800;
 }
 
 .hljs-comment {
-  color: #5a6a5a;
+  color: #8b7355;
   font-style: italic;
 }
 
-/* Special Christmas decorative elements */
+/* Falling leaves effect on headings */
 .dark h1,
 .dark h2 {
-  color: var(--gold);
+  color: var(--amber);
 }
 
 .post-title {
-  color: var(--evergreen);
+  color: var(--burnt-orange);
 }
 
 .dark .post-title {
-  color: var(--gold);
+  color: var(--golden-yellow);
 }
 
-/* Christmas tree decorations */
+/* Autumn leaf decorations */
 h1::before,
 h2::before {
-  content: "🎄 ";
-  color: var(--forest-green);
+  content: "🍂 ";
+  color: var(--burnt-orange);
 }
 
 .dark h1::before,
 .dark h2::before {
-  content: "🎄 ";
-  color: var(--gold);
+  content: "🍂 ";
+  color: var(--amber);
 }
