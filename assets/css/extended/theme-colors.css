@@ -1,187 +1,208 @@
-/* Halloween color scheme
- * theme-id: halloween
- * Spooky oranges, purples, and blacks for October festivities
- * Colors: #1a1a1a (midnight), #ff6600 (pumpkin), #9933ff (purple), #00ff00 (neon green), #ffaa00 (candy corn)
+/* Christmas color scheme
+ * theme-id: christmas
+ * Festive reds, greens, and golds for the holiday season
+ * Colors: #165b33 (evergreen), #bb2528 (christmas red), #146b3a (forest green), #f8b229 (gold), #ea4630 (bright red)
  */
 
 :root {
-  /* Light mode - lighter Halloween colors */
-  --theme: #fff8f0;
-  --entry: #ffe8d6;
-  --primary: #2a1a0a;
-  --secondary: #5a3a1a;
-  --tertiary: #ffd4a3;
-  --content: #2a1a0a;
-  --hljs-bg: #ffe8d6;
-  --code-bg: #ffd9b3;
-  --border: #ff9933;
+  /* Light mode - bright Christmas colors */
+  --theme: #fffef9;
+  --entry: #f5f5f0;
+  --primary: #165b33;
+  --secondary: #2a7a4a;
+  --tertiary: #e8f5e9;
+  --content: #1a5c35;
+  --hljs-bg: #f5f5f0;
+  --code-bg: #ebe8e0;
+  --border: #c8e6c9;
 
-  /* Halloween accent colors */
-  --pumpkin: #ff6600;
-  --purple: #9933ff;
-  --neon-green: #00ff00;
-  --candy-corn: #ffaa00;
-  --midnight: #1a1a1a;
-  --ghost-white: #f0f0f0;
+  /* Christmas accent colors */
+  --evergreen: #165b33;
+  --christmas-red: #bb2528;
+  --forest-green: #146b3a;
+  --gold: #f8b229;
+  --bright-red: #ea4630;
+  --snow-white: #fffafa;
+  --holly-berry: #c41e3a;
 }
 
 .dark {
-  /* Dark mode - spooky Halloween atmosphere */
-  --theme: #1a1a1a;
-  --entry: #252525;
-  --primary: #ff9933;
-  --secondary: #cc7722;
-  --tertiary: #333333;
-  --content: #ffaa66;
-  --hljs-bg: #0d0d0d;
-  --code-bg: #1f1f1f;
-  --border: #ff6600;
+  /* Dark mode - cozy Christmas evening */
+  --theme: #0d1f14;
+  --entry: #1a2e20;
+  --primary: #f5f5dc;
+  --secondary: #d4d4bc;
+  --tertiary: #253a28;
+  --content: #e8e8d0;
+  --hljs-bg: #0a1810;
+  --code-bg: #152118;
+  --border: #2d5a3d;
 
-  /* Halloween accent colors */
-  --pumpkin: #ff6600;
-  --purple: #9933ff;
-  --neon-green: #00ff00;
-  --candy-corn: #ffaa00;
-  --midnight: #0a0a0a;
-  --ghost-white: #f0f0f0;
+  /* Christmas accent colors */
+  --evergreen: #1e7a45;
+  --christmas-red: #d62828;
+  --forest-green: #1a8f4f;
+  --gold: #ffd700;
+  --bright-red: #ff4545;
+  --snow-white: #fffafa;
+  --holly-berry: #e63946;
 }
 
-/* Links - vibrant pumpkin orange */
+/* Links - festive red */
 a {
-  color: var(--pumpkin);
+  color: var(--christmas-red);
 }
 
 a:hover {
-  color: var(--candy-corn);
+  color: var(--bright-red);
 }
 
-/* Post entries with purple accent */
+/* Post entries - evergreen and gold accents */
 .post-entry {
-  border-left: 3px solid var(--pumpkin);
+  border-left: 3px solid var(--evergreen);
 }
 
 .post-entry:hover {
-  border-color: var(--purple);
-  box-shadow: 0 2px 8px rgba(153, 51, 255, 0.2);
+  border-color: var(--gold);
+  box-shadow: 0 2px 8px rgba(248, 178, 41, 0.2);
 }
 
-/* Buttons - pumpkin orange */
+/* Buttons - Christmas red */
 .button,
 button,
 input[type="submit"] {
-  background-color: var(--pumpkin);
-  border-color: var(--pumpkin);
-  color: var(--midnight);
+  background-color: var(--christmas-red);
+  border-color: var(--christmas-red);
+  color: white;
 }
 
 .button:hover,
 button:hover,
 input[type="submit"]:hover {
-  background-color: var(--purple);
-  border-color: var(--purple);
+  background-color: var(--bright-red);
+  border-color: var(--bright-red);
 }
 
-/* Tags - purple with glow effect */
+/* Tags - forest green with gold on hover */
 .post-tags a {
-  background-color: var(--purple);
+  background-color: var(--forest-green);
   color: white;
 }
 
 .post-tags a:hover {
-  background-color: var(--pumpkin);
-  box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+  background-color: var(--gold);
+  color: var(--evergreen);
 }
 
-/* Highlights - neon green for spooky effect */
+/* Highlights - gold */
 mark,
 .highlight {
-  background-color: var(--neon-green);
-  color: var(--midnight);
+  background-color: var(--gold);
+  color: var(--evergreen);
 }
 
-/* Top link - candy corn colors */
+/* Top link - holly berry red */
 .top-link {
-  background-color: var(--candy-corn);
-  color: var(--midnight);
+  background-color: var(--holly-berry);
+  color: white;
 }
 
 .top-link:hover {
-  background-color: var(--pumpkin);
+  background-color: var(--gold);
+  color: var(--evergreen);
 }
 
-/* Code syntax highlighting - Halloween themed */
+/* Code syntax highlighting - Christmas themed */
 .dark .hljs-keyword,
 .dark .hljs-selector-tag,
 .dark .hljs-literal {
-  color: var(--purple);
+  color: var(--bright-red);
 }
 
 .dark .hljs-string,
 .dark .hljs-title,
 .dark .hljs-name {
-  color: var(--pumpkin);
+  color: var(--forest-green);
 }
 
 .dark .hljs-attribute,
 .dark .hljs-symbol {
-  color: var(--candy-corn);
+  color: var(--gold);
 }
 
 .dark .hljs-function,
 .dark .hljs-class {
-  color: var(--neon-green);
+  color: var(--evergreen);
 }
 
 .dark .hljs-number {
-  color: var(--candy-corn);
+  color: var(--holly-berry);
 }
 
 .dark .hljs-comment {
-  color: #666666;
+  color: #6a7a6a;
   font-style: italic;
+}
+
+.dark .hljs-variable {
+  color: var(--snow-white);
 }
 
 /* Light mode syntax highlighting */
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #7700cc;
+  color: #9b1b1e;
 }
 
 .hljs-string,
 .hljs-title,
 .hljs-name {
-  color: #cc5200;
+  color: #0f5027;
 }
 
 .hljs-attribute,
 .hljs-symbol {
-  color: #cc8800;
+  color: #c89622;
 }
 
 .hljs-function,
 .hljs-class {
-  color: #009900;
+  color: #104a2b;
 }
 
 .hljs-number {
-  color: #ff8800;
+  color: #a01822;
 }
 
 .hljs-comment {
-  color: #8a6a3a;
+  color: #5a6a5a;
   font-style: italic;
 }
 
-/* Spooky pumpkin decorations */
+/* Special Christmas decorative elements */
+.dark h1,
+.dark h2 {
+  color: var(--gold);
+}
+
+.post-title {
+  color: var(--evergreen);
+}
+
+.dark .post-title {
+  color: var(--gold);
+}
+
+/* Christmas tree decorations */
 h1::before,
 h2::before {
-  content: "🎃 ";
-  color: var(--pumpkin);
+  content: "🎄 ";
+  color: var(--forest-green);
 }
 
 .dark h1::before,
 .dark h2::before {
-  content: "🎃 ";
-  color: var(--pumpkin);
+  content: "🎄 ";
+  color: var(--gold);
 }
